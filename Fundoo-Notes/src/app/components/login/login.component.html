@@ -1,0 +1,32 @@
+<form class="my-form">
+    <span>Login</span>
+  
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input  matInput placeholder="Enter your Email" name="email" [(ngModel)]="model.email" autocomplete="off" required>
+    
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter your Password" minlength="6" 
+      maxlength="15"  [type]="hide ? 'password' : 'text'" 
+        [formControl]="passFormControl" name="password" [(ngModel)]="model.password" autocomplete="off" required>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 
+          'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="passFormControl.hasError('required')">
+              Please enter password
+           </mat-error>
+           <mat-error *ngIf="!minlength">
+              Password must be 6-15 characters long
+           </mat-error>
+    </mat-form-field>
+  
+    <div>
+      <button class="loginRegisterButton" mat-raised-button (click)="login()" color="primary">Sign in </button>
+    </div>
+    <div>
+      <button class="loginRegisterButton" mat-raised-button (click)="Register()" color="primary">Register</button>
+    </div>
+  </form>
+  
+  
