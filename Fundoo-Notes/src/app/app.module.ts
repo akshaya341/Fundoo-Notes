@@ -1,24 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AppMaterial } from './app.material.module';
+import { ForgetComponent } from './components/forget/forget.component';
+import { HttpClientModule } from '@angular/common/http';
+   // import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ForgetComponent,
+ 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatFormFieldModule
+    HttpClientModule ,
+   AppMaterial
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

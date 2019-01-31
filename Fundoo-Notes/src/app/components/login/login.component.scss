@@ -1,0 +1,69 @@
+
+.header{
+    //background-color: rgb(113, 95, 236);
+    color: black;
+    text-align: center;
+    padding-bottom: 15px;
+    padding: 2%;
+    font-family: sans-serif;
+    
+}
+.header1{
+    text-align: center;
+   font-family: sans-serif;
+   margin: -1%;
+}
+
+  .password{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    text-align-last: auto;
+  }
+  
+  .password>*{
+      width: 20%;
+      padding-bottom: 5px;
+  }
+
+  .loginbtn{
+     background-color: slateblue;
+     color: white;
+     width: 30%;
+     
+
+  }
+
+.button{
+    padding: 10px;
+    text-align: left;
+    
+}
+.mat-form-field {
+   width: 60%; 
+}
+.mat-card .mat-divider-horizontal  {
+    width: 40%;
+}
+
+.para{
+    color: rgb(212, 39, 73);
+    text-align: right;
+   
+    
+}
+a.create{
+ color: rgb(68, 50, 187); 
+float: right;
+padding-top: 5px;
+}
+
+a.pass{
+    float: left;
+    padding-top: 2%;
+    margin: 1%;
+}
+.icon{
+    float: right;
+    padding-bottom: 10%;
+}

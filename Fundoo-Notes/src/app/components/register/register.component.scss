@@ -1,0 +1,43 @@
+.mainForm{
+    display: flex;
+    flex-direction: column;
+    // border:2px ridge;
+    // border-radius: 20px;
+    padding: 5%;
+    width: fit-content;
+  margin-left: 10%;
+}
+.button{
+    margin-left: 80%;
+    .primary{
+        background-color: #3399ff;
+        color: white;
+        font-style: italic;
+    }
+   // float:right;
+}
+.fundoo{
+    display:inline-block;
+}
+
+.inputForm{
+    align-self: center;
+   
+    
+.firstName{
+    width: 40%;
+    margin-right: 2%;
+}
+.lastName{
+    width: 40%;
+}
+.gmail{
+    width: 82%;
+}
+.pass{
+    margin-right: 2%;
+}
+.confirm{
+    margin-right: 3%;
+}
+}
