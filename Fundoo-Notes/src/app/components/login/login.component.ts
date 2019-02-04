@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   
   password: string;
-  
-  model = {}
+  response: any;
+  model = {};
 
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -31,7 +31,13 @@ export class LoginComponent implements OnInit {
    console.log(this.model);
    
     this.httpService.postRequest('user/login', this.model).subscribe(data => {
-      console.log(data);
+     
+      //var result  = {};
+    
+      console.log("data",data);
+      this.response = data;
+      localStorage.setItem('token',this.response.id);
+     
       this.router.navigate(['dashboard']);
     }, err => {
       alert('Something went wrong');

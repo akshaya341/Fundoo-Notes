@@ -14,8 +14,8 @@ export class RegisterComponent implements OnInit {
   userName:String;
   password:String;
 
-
-  hide: true;
+  selected:'';
+  hide = true;
  constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {

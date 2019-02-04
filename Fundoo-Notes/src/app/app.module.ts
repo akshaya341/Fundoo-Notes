@@ -9,6 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppMaterial } from './app.material.module';
 import { ForgetComponent } from './components/forget/forget.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResetComponent } from './components/reset/reset.component';
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     DashboardComponent,
     ForgetComponent,
+    ResetComponent,
  
   ],
   imports: [

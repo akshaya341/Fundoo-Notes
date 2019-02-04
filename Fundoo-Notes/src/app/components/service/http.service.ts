@@ -18,4 +18,11 @@ export class HttpService {
     
     return this.http.post(this.baseUrl + url, data);
   }
+
+  getRequest(url,data){
+    console.log("get request");
+    console.log(data);
+
+    return this.http.get(this.baseUrl+url,data);
+  }
 }

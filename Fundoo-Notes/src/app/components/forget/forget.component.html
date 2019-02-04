@@ -1,3 +1,20 @@
-<p>
-  forget works!
-</p>
+<div fxLayoutAlign="center center" fxFlex="100">
+<mat-card  class="card" fxFlex="50">
+  <mat-card-title class="header">Recover your account</mat-card-title>
+  <mat-card-subtitle class=header1><p>We can help you reset your password and security info.</p> 
+    <p>you will recieve a link to create a new password.</p>
+  </mat-card-subtitle>
+    <mat-form-field appearance="fill" class="mail">
+        <mat-label>Email id</mat-label>
+        <input matInput placeholder="Please enter email" [(ngModel)]="model.email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-hint id="hint">make sure you have right one</mat-hint>
+      </mat-form-field>
+      <div class="buttons">
+          <button id="sbutton" mat-raised-button color="primary" (click)="next()" >Next</button>
+          <button id="cbutton" mat-button (click)="redirect()">Cancel</button>
+      </div>
+     
+     
+</mat-card>
+</div>

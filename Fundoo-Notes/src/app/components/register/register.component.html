@@ -39,11 +39,20 @@
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             <br>
             <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
-             
           </div>
+
+          <mat-form-field require> 
+            <mat-select placeholder="Account Type" [(value)]="selected" >
+              <mat-option value="Basic" >Basic</mat-option>
+              <mat-option value="Advance">Advance</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p>You choosed : {{selected}}</p>
+
           <div class="button">
               <button mat-raised-button class="primary">Register</button>
           </div>
+
         </form>
       </mat-card>
       </div>
