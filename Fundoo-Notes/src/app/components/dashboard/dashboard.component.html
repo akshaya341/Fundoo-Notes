@@ -1,90 +1,170 @@
+<div class="container">
 
-
-<div class="container" FlexLayoutAlign="space-around center" fxFlex="100">
-    
-  <mat-toolbar class="example-toolbar"  >
-   <!-- <div> -->
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  <mat-toolbar class="example-toolbar">
+    <!-- <div> -->
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <img src="../../../assets/image/logo.svg"/> -->
     <h1 class="example-app-name">Keep</h1>
-    
+
     <div class="settings">
-        <button mat-icon-button color="basic">
-        <mat-icon>settings</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="menu" colour="basic">
+          <mat-icon>settings</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Send feedback</button>
+            <button mat-menu-item>App downloads</button>
+            <button mat-menu-item>Keyboard Shaortcuts</button>
+          </mat-menu>
+      <button mat-icon-button color="basic">
+        <mat-icon></mat-icon>
       </button>
-     
-        <button mat-icon-button color="basic" id="refresh">
-          <mat-icon>refresh</mat-icon>
-        </button>
-    
-        <button mat-icon-button  color="basic" id="grid" >
-        <mat-icon>grid_on</mat-icon>
+
+      <button mat-icon-button color="basic" id="refresh">
+        <mat-icon>refresh</mat-icon>
+      </button>
+
+      <button mat-icon-button color="basic" id="grid">
+        <mat-icon>border_all</mat-icon>
       </button>
     </div>
 
     <!-- <div class="apps"> -->
-      <button  mat-icon-button  color="basic" >
+    <button mat-icon-button color="basic">
       <mat-icon>apps</mat-icon>
     </button>
-          <!-- <button mat-mini-fab color  (click)="openDialog()" color="primary">A</button> -->
-     
-  <!-- </div> -->
-  <button mat-icon-button [matMenuTriggerFor]="menu" colour="basic">A
-    <!-- <mat-icon>more_vert</mat-icon> -->
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-fab disabled id="imagebutton">
-    </button>
-    <button mat-menu-item >
-      <p>Akshaya M I</p>
-    </button>
-    <button mat-menu-item></button>
-    <mat-divider></mat-divider>
-    <div>
-      <button mat-flat-button >Add account</button>
-      <button mat-flat-button>Sign out</button>
-    </div>
-  </mat-menu>
+    <!-- <button mat-mini-fab color  (click)="openDialog()" color="primary">A</button> -->
 
-    
+    <!-- </div> -->
+    <button mat-icon-button [matMenuTriggerFor]="menu1"  colour="basic">A
+      
+    </button>
+    <mat-menu #menu1="matMenu">
+      <button mat-fab disabled id="imagebutton">
+      </button>
+      
+        <p>Akshaya M I</p>
+      
+      <button mat-menu-item></button>
+      <mat-divider></mat-divider>
+      <div>
+        <button mat-flat-button (click)="addAccount()">Add account</button>
+        <button mat-flat-button>Sign out</button>
+      </div>
+    </mat-menu>
+
+
   </mat-toolbar>
-  <mat-divider ></mat-divider>
+  <mat-divider></mat-divider>
 
-  <mat-sidenav-container class="example-sidenav-container"   >
+  <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'">
       <mat-nav-list>
         <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
         <mat-list role="List">
-         
+
           <!-- <mat-icon>note</mat-icon> -->
-        <mat-list-item role="listitem" id="note">
-            <img id="img1"src="../../../assets/image/note.svg"/>
+          <mat-list-item role="listitem" id="note">
+            <img id="img1" src="../../../assets/image/note.svg" />
             Note</mat-list-item>
 
-        <mat-list-item role="listitem" id="rem">
-          <img id="img2" src="../../../assets/image/remainder.svg"/>
+          <mat-list-item role="listitem" id="rem">
+            <img id="img2" src="../../../assets/image/remainder.svg" />
             Remainder</mat-list-item>
 
-            <mat-divider ></mat-divider>
-            <p id="para">labels</p>
-         <mat-list-item role="listitem" id="lable">
-           <mat-icon id="edit">edit</mat-icon>
-          Edit lable</mat-list-item>
+          <mat-divider></mat-divider>
+          <p id="para">labels</p>
+          <mat-list-item role="listitem" id="lable">
+            <mat-icon id="edit">edit</mat-icon>
+            Edit lable
+          </mat-list-item>
 
-          <mat-divider ></mat-divider>
-        <mat-list-item role="listitem" id="arch">
-            <img id="img4" src="../../../assets/image/archieve.svg"/>
-          Archive</mat-list-item>
-        
-        <mat-list-item role="listitem" id="bin">
-            <img id="img5" src="../../../assets/image/bin.svg"/>
-          Bin</mat-list-item>  
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" id="arch">
+            <img id="img4" src="../../../assets/image/archieve.svg" />
+            Archive</mat-list-item>
+
+          <mat-list-item role="listitem" id="bin">
+            <img id="img5" src="../../../assets/image/bin.svg" />
+            Trash</mat-list-item>
         </mat-list>
       </mat-nav-list>
     </mat-sidenav>
+    <div class="NoteMenu">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              note..
+            </mat-panel-title>
+            <mat-panel-description>
 
+              <mat-icon id="newlist" (click)="check(1)" matTooltip="New list ">check_box</mat-icon>
+
+              <mat-icon id="brush" matTooltip="Drawing is not available" aria-disabled="true">brush</mat-icon>
+              <mat-icon id="insert" matTooltip="New note with image">insert_photo</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field id="note">
+              <input matInput placeholder="Take a note" autocomplete="off">
+            </mat-form-field>
+           
+            <div>
+              <button matTooltip="Remaind me" mat-icon-button>
+                <mat-icon>notification_important</mat-icon> </button>
+                
+                <button matTooltip="collaborator" mat-icon-button>
+                  <mat-icon>person_add</mat-icon>
+                </button>
+
+                <button matTooltip="change color" mat-icon-button>
+                  <mat-icon>color_lens</mat-icon>
+                </button>
+ 
+                 <button matTooltip="add image" mat-icon-button>
+                   <mat-icon>insert_photo</mat-icon>
+                 </button>
+                 
+                 <!-- <img id="undo" src="../../../assets/image/undo.svg"/> -->
+                <button matTooltip="Archive" mat-icon-button  disabled=true>
+                  <mat-icon>undo</mat-icon>
+                </button>
+
+                <button matTooltip="undo" mat-icon-button disabled=true>
+                  <mat-icon>redo</mat-icon>
+                </button>
+                <button mat-icon-button [matMenuTriggerFor]="menu2" matTooltip="more">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu2="matMenu">
+                    <button mat-menu-item>
+                      <span>Delete note</span>
+                    </button>
+                    <button mat-menu-item >
+                      <span>Add label</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                      <span>Add drawing</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Make a copy</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Show checkboxes</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Copy to google docs</span>
+                    </button>
+                  </mat-menu>
+    
+                 
+                  <button  mat-button (click)="close(0)">close</button>
+            </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
   </mat-sidenav-container>
+  
 </div>
-
-
-
-
