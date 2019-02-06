@@ -1,25 +1,30 @@
 <div fxLayoutAlign="center center" fxFlex="100">
-<mat-card fxFlex="50">
-  <mat-card-title id="header">Reset Password</mat-card-title>
+  <mat-card fxFlex="50">
+    <mat-card-title id="header">Reset Password</mat-card-title>
+    <div>
+      <mat-error fxLayoutAlign="center ">{{message}}</mat-error>
+    </div>
+    <form>
+      <div class="first">
+        <mat-form-field appearance="outline">
+          <mat-label>password</mat-label>
+          <input matInput placeholder="new Password" [type]="hide ? 'password' 
+    : 'text'" [formControl]="password"
+            required>
+          <!-- <mat-icon matSuffix>visibility_off</mat-icon> -->
+        </mat-form-field>
 
-<form >
-  <div class="first" >
-  <mat-form-field appearance="outline">
-      <mat-label>password</mat-label>
-    <input matInput placeholder="new Password" [type]="hide ? 'password' 
-    : 'text'" [formControl]="password" required>
-    <!-- <mat-icon matSuffix>visibility_off</mat-icon> -->
-  </mat-form-field>
-  
-</div>
-  <div class="second">
-   <mat-form-field appearance="outline">
-  <mat-label>Re-enter password</mat-label>
-  <input matInput placeholder="password" [type]="hide ? 'password' 
-  : 'text'" [formControl]="cpassword" required>
-</mat-form-field>
-</div>
-<button id="button" mat-raised-button color="primary" (click)="save()">Save</button>
-</form>
-</mat-card>
+      </div>
+      <div class="second">
+        <mat-form-field appearance="outline">
+          <mat-label>Re-enter password</mat-label>
+          <input matInput placeholder="password" [type]="hide ? 'password' 
+  : 'text'" [formControl]="cpassword"
+            required>
+        </mat-form-field>
+      </div>
+      <button id="button" mat-raised-button color="primary" (click)="update()">Update</button>
+    </form>
+
+  </mat-card>
 </div>

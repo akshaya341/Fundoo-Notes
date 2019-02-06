@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material'; 
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpService } from '../service/http.service';
 import { Router } from '@angular/router';
 
@@ -22,13 +22,12 @@ export class DashboardComponent implements OnInit {
   panelOpenState = false;
 
 
-  fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
-  
+  fillerNav = Array.from({ length: 5 }, (_, i) => `Nav Item ${i + 1}`);
+
   // 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private httpService: HttpService, private router: Router) 
-  {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpService: HttpService, private router: Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -43,12 +42,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-  
-  isclick(){
+
+  isclick() {
     return false;
   }
 
- 
+
   step = 0;
 
   setStep(index: number) {
@@ -62,16 +61,16 @@ export class DashboardComponent implements OnInit {
   prevStep() {
     this.step--;
   }
-  
-  close(num:number){
+
+  close(num: number) {
     this.setStep(num);
   }
 
-  check(num:number){
+  check(num: number) {
     this.setStep(num);
   }
 
-  addAccount(){
+  addAccount() {
     this.router.navigate(['register']);
   }
 }

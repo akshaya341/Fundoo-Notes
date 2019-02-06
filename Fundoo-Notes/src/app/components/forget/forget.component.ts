@@ -10,31 +10,49 @@ import { HttpService } from '../service/http.service';
 })
 export class ForgetComponent implements OnInit {
   
-//email=new FormControl('',[Validators.required,Validators.email])
-  email=String;
-  
+email=new FormControl('',[Validators.required,Validators.email])
+ model: any; 
+ message='';
+ responce:any;
+
   constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {
   }
   
-  
-
- model={};
   next(){
+
+    try{
+   this.model={
+      "email" : this.email.value
+    };
+  console.log("model",this.model)
+    if(this.email.value == '')
+    {
+      this.message="Field missing ";
+    }
+  
+else{               
     this.httpService.postRequest('user/reset',this.model).subscribe(data =>  {
       console.log(data);
-      this.router.navigate(['resetpassword']);
+      this.responce=data;
+      this.message=this.responce.message;
+     // this.router.navigate(['resetpassword']);
     },
     err => {
       alert('Something went wrong');
 
       })
-    
+    }
+  }
+    catch(err){
+    alert('Error occured')
+    }
   }
    
-  redirect() {
-    this.router.navigate(['login']);
-  }
+
+  // redirect() {
+  //   this.router.navigate(['login']);
+  // }
    
 }

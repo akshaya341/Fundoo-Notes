@@ -3,50 +3,40 @@
     <div>
 
       <mat-card-header class="header">
-        <mat-card-title class="note">Fundoo </mat-card-title>
+        <mat-card-title class="note" fxLayoutAlign="center">Fundoo </mat-card-title>
       </mat-card-header>
 
       <mat-card-header class="header1">
-        <mat-card-title class="note1">Sign In</mat-card-title>
-        <mat-card-subtitle>Welcome to Fundoo</mat-card-subtitle>
+        <mat-card-title class="note1" fxLayoutAlign="center">Sign In</mat-card-title>
+        <mat-card-subtitle fxLayoutAlign="center">Welcome to Fundoo</mat-card-subtitle>
       </mat-card-header>
 
       <div class="form">
         <mat-form-field appearance="outline" color="accent">
-          <label for="Email"></label>
-          <input matInput placeholder="Enter your email" [formControl]="email" [(ngModel)]="model.email" required>
+          <mat-label for="Email">Email</mat-label>
+          <input matInput placeholder="Enter your email" [formControl]="email" autocomplete="on" required>
           <mat-icon matSuffix>email</mat-icon>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          <mat-error *ngIf="email.hasError('required')">Please, enter the email id</mat-error>
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field appearance="outline" color="accent">
-          <label for="password"></label>
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [(ngModel)]="model.password" autocomplete="off"
+          <mat-label for="password">Password</mat-label>
+          <input matInput placeholder="Enter your password" minlength="8" maxlength="15" [type]="hide ? 'password' : 'text'" [formControl]="password" autocomplete="off"
             required>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <mat-error *ngIf="password.hasError('required')">Enter your password</mat-error>
+          <mat-error *ngIf="!minlength">Password must be of length 8-15</mat-error>
         </mat-form-field>
       </div>
 
       <div class="button">
-        <button class="loginbtn" mat-button (click)="login()">Login</button>
+        <button class="loginbtn" mat-button (click)="login()"  >Login</button>
       </div>
 
-      <div style="width: 100%">
-        <!-- <mat-divider></mat-divider> -->
-        <!-- <span style="width: 100%">or</span> -->
-        <!-- <mat-divider></mat-divider> -->
-
-        <!-- <span>
-          <mat-divider ></mat-divider>
-       </span> 
-       <span>or</span>
-       <span>
-          <mat-divider ></mat-divider>
-       </span>  -->
-
-      </div >
+      <div><mat-error>{{message}}</mat-error></div>
+    
       <a  class="pass" href="/forget"  id="Forgot-password">Forgotten password..?</a>
       <p class="para" >Don't have account</p> 
       <mat-icon class=" icon" matSuffix>create</mat-icon>

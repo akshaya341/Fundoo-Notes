@@ -4,9 +4,10 @@
   <mat-card-subtitle class=header1><p>We can help you reset your password and security info.</p> 
     <p>you will recieve a link to create a new password.</p>
   </mat-card-subtitle>
+  <div><mat-error fxLayoutAlign="center">{{message}}</mat-error></div>
     <mat-form-field appearance="fill" class="mail">
         <mat-label>Email id</mat-label>
-        <input matInput placeholder="Please enter email" [(ngModel)]="model.email">
+        <input matInput placeholder="Please enter email" [formControl]="email" >
         <mat-icon matSuffix>email</mat-icon>
         <mat-hint id="hint">make sure you have right one</mat-hint>
       </mat-form-field>
