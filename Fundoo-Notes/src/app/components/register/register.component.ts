@@ -1,3 +1,17 @@
+/************************************************************************************************
+* Execution : 1. default node cmd> register.ts 
+* 
+* Purpose : Registration to fundoo
+* 
+* @file : register.ts
+* @module : register.ts - This is optional if expeclictly its an npm or local package
+* @author : Akshaya M I <akshayakumarmi97@gmail.com>
+* @since : 28-1-2019
+*
+*************************************************************************************************/
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../service/http.service';
 import { Router } from '@angular/router';
@@ -13,6 +27,8 @@ export class RegisterComponent implements OnInit {
   selected: '';
   hide = true;
   model: any;
+  responce: any;
+  message1='';
 
   firstname = new FormControl('', [Validators.required]);
   lastname = new FormControl('', [Validators.required])
@@ -47,9 +63,13 @@ export class RegisterComponent implements OnInit {
         return;
       }
       else {
+
         this.httpService.postRequest('/user/userSignUp', this.model).subscribe(data => {
+
+          this.responce=data;
+           this.message1=this.responce.message;
           console.log(data);
-          this.router.navigate(['']);
+          //this.router.navigate(['']);
         },
           err => {
             alert('Something went wrong ')

@@ -2,6 +2,7 @@
     <mat-card class="mainDiv" fxFlex="88">
     
         <mat-card-header>
+            <div><mat-error>{{message1}}</mat-error></div>
     
           <mat-card-title>Fundoo-Notes</mat-card-title>
     
@@ -50,7 +51,7 @@
             </mat-button-toggle-group>
          
           <!-- <p>You choosed : {{selected}}</p> -->
-
+        
           <div class="button">
               <button mat-raised-button class="primary" (click)="register()">Register</button>
           </div>

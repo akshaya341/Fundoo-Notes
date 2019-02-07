@@ -1,3 +1,18 @@
+/************************************************************************************************
+* Execution : 1. default node cmd> forgot.ts 
+* 
+* Purpose :forgot to fundoo
+* 
+* @file : forgot.ts
+* @module : forgot.ts - This is optional if expeclictly its an npm or local package
+* @author : Akshaya M I <akshayakumarmi97@gmail.com>
+* @since : 31-1-2019
+*
+*************************************************************************************************/
+
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';

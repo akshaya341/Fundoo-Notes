@@ -1,3 +1,16 @@
+/************************************************************************************************
+* Execution : 1. default node cmd> dashboard.ts 
+* 
+* Purpose :dashboard to fundoo
+* 
+* @file : dashboard.ts
+* @module : dashboard.ts - This is optional if expeclictly its an npm or local package
+* @author : Akshaya M I <akshayakumarmi97@gmail.com>
+* @since : 2-2-2019
+*
+*************************************************************************************************/
+
+
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
