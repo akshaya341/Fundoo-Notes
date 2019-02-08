@@ -23,11 +23,11 @@
       <div>
         <mat-form-field appearance="outline" color="accent">
           <mat-label for="password">Password</mat-label>
-          <input matInput placeholder="Enter your password" minlength="8" maxlength="15" [type]="hide ? 'password' : 'text'" [formControl]="password" autocomplete="off"
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="password" autocomplete="off"
             required>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           <mat-error *ngIf="password.hasError('required')">Enter your password</mat-error>
-          <mat-error *ngIf="!minlength">Password must be of length 8-15</mat-error>
+          <!-- <mat-error *ngIf="!minlength">Password must be of length 8-15</mat-error> -->
         </mat-form-field>
       </div>
 

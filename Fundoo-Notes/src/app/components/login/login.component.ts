@@ -60,14 +60,14 @@ else{
       var token=localStorage.getItem('token');
       console.log("token id ",token );
 
-    if(token != this.response.id){
+    if(token != this.response.userId){
       this.message="User not found";
       return;
     }
-    else if(this.password.value != this.response.password){
-      this.message="Incorrect Password";
-      return;
-    }
+    // else if(this.password.value != this.response.password){
+    //   this.message="Incorrect Password";
+    //   return;
+    // }
 
    else{
     
