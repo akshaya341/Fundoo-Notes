@@ -1,3 +1,122 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  
+
+
+  .my-tooltip {
+    white-space: pre-line;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search{
+    margin-left: 1%;
+    width: 100%;
+
+}
+
+.example-toolbar{
+    box-shadow: 0px 3px lightgray;
+    // width: 150%;
+}
+
+.example-app-name{
+    padding-left: 5%
+}
+
+#searchbtn{
+    background-color: rgb(206, 193, 193);
+}
+
+.searchText{
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
+
+.settingbtn{
+    margin-left: 15%;
+}
+
+.account{
+  margin-left: 10px; 
+}
+
+
+#grid{
+    margin-left: 15px;
+}
+
+#setting{
+    margin-left: 15px;
+}
+
+#apps{
+    margin-left: 15px;
+}
+#notification{
+    margin-right: 30px;
+}
+
+
+
+
+
+
+
+
 #rema{
     font-size: 20px;
     font-family: sans-serif;   
@@ -47,12 +166,7 @@ mat-sidenav{
     margin-left: 2%;
     
   }
-  
-  .example-sidenav-container {
-    
-    flex: 20;
-    //width: 1000px;
-  }
+ 
   
   .example-is-mobile .example-sidenav-container {
     
@@ -67,6 +181,7 @@ mat-sidenav{
   .settings{
     display: flex;
     flex-direction: row;
+     float: right;
   }
 .apps{
     display: flex;
@@ -104,6 +219,7 @@ mat-sidenav{
     margin-left: 25%;
     margin-bottom: 15%;
     width: 50%;
+    padding-top: 2%;
   
     #newlist{
         margin-left: 350px;
@@ -123,5 +239,76 @@ mat-sidenav{
 
 
 
+.white{
+    background-color: rgb(224, 224, 224);
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.red{
+    background-color: rgb(219, 54, 54);
+    margin-left: 8px;
+}
+.orange{
+ background-color: rgb(231, 98, 49);
+ margin-left: 8px;
+}
+.yellow{
+ background-color: rgb(204, 204, 68);
+ margin-left: 8px;
+ margin-right: 8px;
+}
+.green{
+    background-color: rgb(46, 139, 46);
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.teal{
+  background-color: rgb(47, 148, 148);
+  margin-left: 8px;
+}
+.blue{
+    background-color: rgb(75, 75, 212);
+    margin-left: 8px;
+}
+.darkblue{
+background-color: rgb(33, 33, 155);
+margin-left: 8px;
+}
+.purple{
+background-color: rgb(155, 41, 155);
+margin-left: 8px;
+margin-bottom: 10px;
+}
+.pink{
+ background-color: rgb(231, 159, 171);
+ margin-left: 8px;
+}
+.Brown{
+background-color: rgb(138, 61, 61);
+margin-left: 8px;
+}
+.gray{
+background-color: rgb(129, 115, 115);
+margin-left: 8px;
+}
 
+.mat-stroked-button[_ngcontent-c1]:not([class*=mat-elevation-z]) {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+    width: 62px;
+}
+
+
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline-thick {
+    opacity: 1;
+    border-color: black;
+    width: 517px;
+}
+
+// .mat-accordion .mat-expansion-panel:last-of-type {
+//    // background-color: yellowgreen;
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline {
+//     width: 363px;
+//     flex: 1
 // }

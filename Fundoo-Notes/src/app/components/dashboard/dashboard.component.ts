@@ -11,11 +11,10 @@
 *************************************************************************************************/
 
 
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { HttpService } from '../service/http.service';
 import { Router } from '@angular/router';
 
 /**
@@ -32,29 +31,28 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
-  panelOpenState = false;
 
+  
 
-  fillerNav = Array.from({ length: 5 }, (_, i) => `Nav Item ${i + 1}`);
+  
 
-  // 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private httpService: HttpService, private router: Router) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
+ngOnInit(){
 
+}
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)akshaya\.io$/].some(h => h.test(window.location.host));
+  
 
 
-  ngOnInit() {
-  }
 
   isclick() {
     return false;
@@ -86,4 +84,9 @@ export class DashboardComponent implements OnInit {
   addAccount() {
     this.router.navigate(['register']);
   }
+
+  signout(){
+    this.router.navigate(['login']);
+  }
+
 }

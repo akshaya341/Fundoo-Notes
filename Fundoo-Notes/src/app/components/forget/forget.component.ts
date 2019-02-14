@@ -16,7 +16,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpService } from '../service/http.service';
+import { HttpService } from '../../service/http.service';
 
 @Component({
   selector: 'app-forget',

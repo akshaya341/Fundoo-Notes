@@ -5,6 +5,8 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 import { A11yModule } from '@angular/cdk/a11y';
 import { NgModule } from '@angular/core';
 import 'hammerjs';
+
+
 import {
   // MatIconModule,
   // MatInputModule,
@@ -54,6 +56,7 @@ import {
 
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContenteditableModule } from '@ng-stack/contenteditable';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout'
 @NgModule({
@@ -112,6 +115,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    ContenteditableModule
 
   ],
   exports: [
@@ -169,6 +173,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    ContenteditableModule
 
 
   ]

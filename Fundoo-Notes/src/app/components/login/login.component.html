@@ -37,10 +37,10 @@
 
       <div><mat-error >{{message}}</mat-error></div>
     
-      <a  class="pass" href="/forget"  id="Forgot-password">Forgotten password..?</a>
+      <a  id="pass" type="button"><i (click)="forgot()" class="forgot">Forgotten password..?</i></a>
       <p class="para" >Don't have account</p> 
       <mat-icon class=" icon" matSuffix>create</mat-icon>
-      <a class="create" href="/register" id="create account">create one! </a> 
+      <a id="create" type="button"><i (click)="create()" class="create account">create one.!</i> </a> 
     </div>
     
     

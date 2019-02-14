@@ -52,13 +52,15 @@
    
     
 }
-a.create{
+#create{
  color: rgb(68, 50, 187); 
 float: right;
 padding-top: 5px;
+cursor: pointer;
+color: blue
 }
 
-a.pass{
+#pass{
     float: left;
     padding-top: 2%;
     margin: 1%;
@@ -66,4 +68,9 @@ a.pass{
 .icon{
     float: right;
     padding-bottom: 10%;
+}
+
+.forgot{
+    cursor: pointer;
+    color: blue
 }

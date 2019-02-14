@@ -10,6 +10,10 @@ import { AppMaterial } from './app.material.module';
 import { ForgetComponent } from './components/forget/forget.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetComponent } from './components/reset/reset.component';
+import { NotecardComponent } from './components/notecard/notecard.component';
+import { MaincardComponent } from './components/maincard/maincard.component';
+// import { ComponentsComponent } from './components/components/components.component';
+
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -19,7 +23,9 @@ import { ResetComponent } from './components/reset/reset.component';
     DashboardComponent,
     ForgetComponent,
     ResetComponent,
- 
+    NotecardComponent,
+    MaincardComponent,
+   
   ],
   imports: [
     BrowserModule,

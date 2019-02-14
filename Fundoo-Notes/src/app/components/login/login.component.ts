@@ -13,10 +13,10 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { HttpService } from '../service/http.service'
+import { HttpService } from '../../service/http.service'
 import { HttpClientModule } from '@angular/common/http'
 import { Router } from '@angular/router';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -81,6 +81,16 @@ else{
     });
   }
 
+  }
+
+  forgot(){
+    console.log('IM clicked');
+    this.router.navigate(['forget']);
+  }
+
+  create(){
+    console.log("Im navigated");
+    this.router.navigate(['register']);
   }
 
 }
