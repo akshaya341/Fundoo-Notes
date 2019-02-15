@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ResetComponent } from './components/reset/reset.component';
 import { NotecardComponent } from './components/notecard/notecard.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
+import { NoteComponent } from './components/note/note.component';
 // import { ComponentsComponent } from './components/components/components.component';
 
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -25,6 +26,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
     ResetComponent,
     NotecardComponent,
     MaincardComponent,
+    NoteComponent,
    
   ],
   imports: [

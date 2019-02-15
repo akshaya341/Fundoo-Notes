@@ -1,0 +1,123 @@
+// note card css
+.matcard{
+   
+    margin-top: 20px;
+}
+.Border{
+    border-color: white;
+}
+
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}
+
+.maincard{
+    width: 60%;
+    color: rgb(173, 166, 166);
+    //margin-top: 30px;
+}
+
+
+
+// main card
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.white{
+    background-color: rgb(224, 224, 224);
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.red{
+    background-color: rgb(231, 87, 87);
+    margin-left: 8px;
+}
+.orange{
+ background-color: rgb(231, 98, 49);
+ margin-left: 8px;
+}
+.yellow{
+ background-color: rgb(204, 204, 68);
+ margin-left: 8px;
+ margin-right: 8px;
+}
+.green{
+    background-color: rgb(46, 139, 46);
+    margin-left: 8px;
+    margin-bottom: 10px;
+}
+.teal{
+  background-color: rgb(47, 148, 148);
+  margin-left: 8px;
+}
+.blue{
+    background-color: rgb(75, 75, 212);
+    margin-left: 8px;
+}
+.darkblue{
+background-color: rgb(33, 33, 155);
+margin-left: 8px;
+}
+.purple{
+background-color: rgb(155, 41, 155);
+margin-left: 8px;
+margin-bottom: 10px;
+}
+.pink{
+ background-color: rgb(231, 159, 171);
+ margin-left: 8px;
+}
+.Brown{
+background-color: rgb(138, 61, 61);
+margin-left: 8px;
+}
+.gray{
+background-color: rgb(129, 115, 115);
+margin-left: 8px;
+}
+
+.matcard{
+    margin-top: 30px;
+}
+.Border :focus{
+    outline: white;
+}
+element.style {
+    border-color: white;
+
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-text)
+}
+
+.title{
+    margin-bottom: 20px;
+    color: rgb(173, 166, 166);
+    
+  
+    
+}
+
+.takenote{
+    margin-bottom: 10px;
+    color: rgb(173, 166, 166);
+}
+// #Remaind{
+//     margin-right: 10px;
+// }
+
