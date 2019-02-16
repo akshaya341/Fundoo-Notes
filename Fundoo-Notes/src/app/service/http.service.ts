@@ -47,4 +47,16 @@ export class HttpService {
     }
     return this.http.post(url, this.getEncodedData(data),httpOptions);
   }
+
+  PostHeader(url: any, data: any){
+    url=this.baseUrl+url;
+    const httpOptions ={
+      headers : new HttpHeaders({
+      'content-Type' : 'application/x-www-form-urlencoded',
+      'Authorization' : localStorage.getItem('token')
+
+    })
+    }
+    return this.http.post(url,httpOptions);
+  }
 }

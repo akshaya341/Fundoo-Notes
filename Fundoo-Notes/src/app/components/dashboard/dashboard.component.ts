@@ -31,10 +31,7 @@ import { Router } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
-
-  
-
-  
+  message : any;
 
   private _mobileQueryListener: () => void;
 
@@ -50,36 +47,39 @@ ngOnInit(){
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  recieveMessage($event){
+    this.message= $event ;
+    console.log ("event data..", this.message);
+  }
+
   
-
-
 
   isclick() {
     return false;
   }
 
 
-  step = 0;
+  // step = 0;
 
-  setStep(index: number) {
-    this.step = index;
-  }
+  // setStep(index: number) {
+  //   this.step = index;
+  // }
 
-  nextStep() {
-    this.step++;
-  }
+  // nextStep() {
+  //   this.step++;
+  // }
 
-  prevStep() {
-    this.step--;
-  }
+  // prevStep() {
+  //   this.step--;
+  // }
 
-  close(num: number) {
-    this.setStep(num);
-  }
+  // close(num: number) {
+  //   this.setStep(num);
+  // }
 
-  check(num: number) {
-    this.setStep(num);
-  }
+  // check(num: number) {
+  //   this.setStep(num);
+  // }
 
   addAccount() {
     this.router.navigate(['register']);

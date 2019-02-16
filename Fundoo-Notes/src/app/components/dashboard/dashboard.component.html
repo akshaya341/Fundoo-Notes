@@ -106,11 +106,11 @@
               </mat-list>
         </mat-nav-list>
       </mat-sidenav>
-  
       <mat-sidenav-content>
     <router-outlet>
         <!-- <app-notecard></app-notecard> -->
-        <app-maincard></app-maincard>
+         <!-- <app-maincard (messageEvent)="recieveMessage($event)" ></app-maincard>  -->
+        <app-content (messageEvent)="recieveMessage($event)"></app-content>
       
     </router-outlet>
       

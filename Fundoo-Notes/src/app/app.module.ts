@@ -13,6 +13,8 @@ import { ResetComponent } from './components/reset/reset.component';
 import { NotecardComponent } from './components/notecard/notecard.component';
 import { MaincardComponent } from './components/maincard/maincard.component';
 import { NoteComponent } from './components/note/note.component';
+import { IconListComponent } from './components/icon-list/icon-list.component';
+import { ContentComponent } from './components/content/content.component';
 // import { ComponentsComponent } from './components/components/components.component';
 
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -27,6 +29,8 @@ import { NoteComponent } from './components/note/note.component';
     NotecardComponent,
     MaincardComponent,
     NoteComponent,
+    IconListComponent,
+    ContentComponent,
    
   ],
   imports: [

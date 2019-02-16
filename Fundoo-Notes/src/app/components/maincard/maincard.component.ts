@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../service/http.service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import {  Output, EventEmitter } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-maincard',
   templateUrl: './maincard.component.html',
@@ -11,9 +12,10 @@ import { Title } from '@angular/platform-browser';
 export class MaincardComponent implements OnInit {
 
   flag = true;
-  noteTitle: any;
-  noteContent: any;
+  noteTitle = new FormControl('',[Validators.required,Validators.required]);
+  noteContent = new FormControl('',[Validators.required,Validators.required]);
   model : any;
+  
   constructor(private httpService: HttpService, private router: Router) { }
 
   colorArray = ["white", "red","orange", "yellow","green","teal","blue","darkblue","purple","pink","brown","gray"];
@@ -25,24 +27,24 @@ export class MaincardComponent implements OnInit {
     this.router.navigate([''])
   }
 
-  reverseFlag() {
-    this.flag = !this.flag;
-  }
+ 
 
+  @Output() messageEvent = new EventEmitter<string>();
 
   //colorArray=["white", "red","orange", "yellow","green","teal","blue","darkblue","purple","pink","brown","gray"];
 
    addNote(){
+    
      this.flag = !this.flag;
-     this.noteTitle=document.getElementById('noteTitle').innerHTML;
-     this.noteContent = document.getElementById('noteContent').innerHTML;
+    //  this.noteTitle=document.getElementById('noteTitle').innerHTML;
+    //  this.noteContent = document.getElementById('noteContent').innerHTML;
 
-     //console.log()
-     if(this.noteTitle || this.noteContent)
+     
+     if(this.noteTitle  || this.noteContent )
      {
       this.model= {
-         title : this.noteTitle,
-         description : this.noteContent,
+         title : this.noteTitle.value,
+         description : this.noteContent.value,
          labelIdList	: '',
          checklist   : '',
          isPined   : false,
@@ -51,9 +53,28 @@ export class MaincardComponent implements OnInit {
           reminder : '',
           collaberators : ''
        }
+        console.log("model data",this.model)
+       this.httpService.encodedPostForm('notes/addNotes',this.model).subscribe(data =>{
+        console.log("responace data",data);
+        this.messageEvent.emit(this.model);
+      },
+      err =>
+      {
+        alert('Something went wrong ');
+        console.log("error-------",err);   
+      })
      }
      
    }
+  
+  //  messageHit($event){
+  //   this.addNote=$event;
+  //   console.log("MessageHit" );
+  //  }
 
-
+  reverseFlag($event) {
+    this.flag = !this.flag;
+  
+  }
+ 
 }

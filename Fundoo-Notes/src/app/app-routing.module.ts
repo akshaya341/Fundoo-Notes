@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgetComponent } from './components/forget/forget.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { NoteComponent } from './components/note/note.component';
+import { ContentComponent } from './components/content/content.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
+    path : 'resetpassword/:token',
+    component : ResetComponent
+  },
+  {
     path:'dashboard',
     component: DashboardComponent,
     children:[{
@@ -29,8 +34,8 @@ const routes: Routes = [
       
     },
       {
-        path:'note',
-        component : NoteComponent
+        path:'app-content',
+        component : ContentComponent
       },
     ]
     
@@ -42,10 +47,6 @@ const routes: Routes = [
   {
     path:'resetpassword/:token',
     component:  ResetComponent
-  },
-  {
-    path : 'resetpassword',
-    component : ResetComponent
   },
 ];
 
