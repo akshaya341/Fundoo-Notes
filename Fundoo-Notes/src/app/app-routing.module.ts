@@ -33,6 +33,11 @@ const routes: Routes = [
       pathMatch:'full'
       
     },
+
+    {
+      path:'note',
+      component : ContentComponent
+    },
       {
         path:'app-content',
         component : ContentComponent

@@ -3,32 +3,37 @@
 
 
 
-<!-- 
-<div class="mininote"  fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="98"  fxFlex="30"></div>
-  <div *ngFor= "let items of card ; let i = index"  >
-  <div *ngIf="items.isDeleted ==false && items.isArchieved==false">
-    <mat-card  class="minicard" >
-        <div fxLayout="column" [style.backgroundColor]="item color" >
-                <div fxFlex="90" (click)="openDialog(item)">{{item.title}}</div>
-            <div fxFlex="10" ><button mat-icon-button></button>
-    </div>
-       <mat-card-content>
-        <app-icon-list [childMessage]="item" [iconDisplay]="parentMessage" (colorEvent)="color($event)" fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
-        </app-icon-list>
-    </mat-card-content>
-    </mat-card>
-</div>
-</div>
-</div> -->
 
 <div class="mininote"  fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="98"  fxFlex="30">
+  <div *ngFor= "let items of card ; let i = index"  >
+  <div>
+    <mat-card  class="minicard" >
+        <div fxLayout="column"  >
+                <div fxFlex="90" (click)="openDialog(item)">{{items.title}}</div>
+            <div fxFlex="10" ><button mat-icon-button></button>
+    </div>
+    </div>
+        <mat-card-content fxLayout="column"> 
+                <div>{{items.description}}</div>
+            <app-icon-list fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
+    
+                </app-icon-list>
+    </mat-card-content> 
+    </mat-card>
+ </div> 
+</div>
+</div>
+<!-- 
+
+<div  fxLayout="row" >
+<div class="mininote" fxFlex.xs="98" *ngFor= "let items of card ; let i = index" >
 
         <mat-card  class="minicard1" >
             <p >
-                akshaya
+                {{items.title}}
             </p >
             <p >
-               fghh
+                {{items.description}}
             </p>
             <app-icon-list fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
     
@@ -36,6 +41,8 @@
         </mat-card>
     </div>
 
+    </div> -->
+<!-- 
     <div class="mininote"  fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="98"  fxFlex="30">
 
             <mat-card  class="minicard2" >
@@ -49,4 +56,4 @@
         
                 </app-icon-list>
             </mat-card>
-        </div>
+        </div> -->

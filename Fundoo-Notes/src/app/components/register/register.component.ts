@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
           this.responce=data;
            this.message1=this.responce.message;
           console.log(data);
-          //this.router.navigate(['']);
+          // this.router.navigate(['login']);
         },
           err => {
             alert('Something went wrong ')
@@ -79,6 +79,6 @@ export class RegisterComponent implements OnInit {
     catch (err) {
       this.message="Something bad happened"
     }
-
+     
   }
 }

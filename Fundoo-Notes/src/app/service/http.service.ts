@@ -68,4 +68,14 @@ export class HttpService {
     }
     return this.http.post(url,httpOptions);
   }
+getHttp(url){
+  const httpToken={
+  headers : new HttpHeaders({
+    'content-Type' : 'application/json',
+    'Authorization' : localStorage.getItem('token')
+  })
+}
+  return this.http.get(this.baseUrl+url,httpToken);
+}
+
 }

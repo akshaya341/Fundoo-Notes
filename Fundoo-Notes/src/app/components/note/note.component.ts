@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output,ViewChild,AfterViewInit } from '@angular/core';
+import { NoteServiceService } from "../../service/note-service.service";
 import { EventEmitter } from 'events';
 
 @Component({
@@ -8,14 +9,25 @@ import { EventEmitter } from 'events';
 })
 export class NoteComponent implements OnInit {
 
-  array : any [];
-  constructor() { }
+  card : any [];
+  constructor(private noteService:NoteServiceService) { }
 
-  @Input() card ;
   @Output() child=new EventEmitter ();
-  // parent message : true;
+   parentmessage : true;
   ngOnInit() {
+    this.getAllCard();
 
+  }
+  getAllCard(){
+  this.noteService.getcard().subscribe(data=>{
+    
+    this.card=data['data']['data'];
+    this.card.reverse();
+    console.log('card ',this.card)
+  },err=>{
+    console.log(err);
+  })
+    
   }
   
 

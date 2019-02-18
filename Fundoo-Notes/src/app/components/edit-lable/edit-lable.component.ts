@@ -10,22 +10,26 @@ export class EditLableComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef< DashboardComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   ngOnInit() {
   }
 
-  close() : void {
+  // close() : void {
 
-      // this.dialogRef.close();
-    }
+  //     // this.dialogRef.close();
+  //   }
 
-    
-  
+   
+   
     onNoClick(): void {
       this.dialogRef.close();
+      console.log("im in edit label")
     }
   
   }
+
+
+
 
 

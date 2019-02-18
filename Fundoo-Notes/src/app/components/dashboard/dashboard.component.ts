@@ -66,6 +66,7 @@ ngOnInit(){
     const dialogRef = this.dialog.open(EditLableComponent, {
       width: '350px',
       // data: this.content
+      
     });
 
     dialogRef.afterClosed().subscribe(result => {

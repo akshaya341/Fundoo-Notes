@@ -11,4 +11,8 @@ export class NoteServiceService {
   postcolor(body){
     return this.httpService.postJSON('/note/changesColorNotes',body)
   }
+
+    getcard(){
+         return this.httpService.getHttp('notes/getNotesList');
+    }
 }

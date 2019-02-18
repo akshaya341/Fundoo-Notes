@@ -41,9 +41,12 @@ import { EditLableComponent } from './components/edit-lable/edit-lable.component
     HttpClientModule ,
    AppMaterial
   ],
-  exports : [
-    EditLableComponent
+  entryComponents:[
+    EditLableComponent,
   ],
+  // exports : [
+  //   EditLableComponent
+  // ],
   providers: [],
   bootstrap: [AppComponent]
 })
