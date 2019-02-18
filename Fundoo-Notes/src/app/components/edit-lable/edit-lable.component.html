@@ -1,0 +1,14 @@
+<div>
+  <h4>Edit labels</h4>
+  <div mat-dialog-content > 
+    <mat-icon>add</mat-icon>
+      <mat-form-field >
+          <input matInput [(ngModel)]="label_content" autocomplete="off">
+        </mat-form-field>
+        <mat-icon>check</mat-icon>
+  </div>
+  <div>
+    <button mat-flat-button  [mat-dialog-close]="label_content" >close</button>
+  </div>
+
+</div>

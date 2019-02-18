@@ -11,12 +11,16 @@
 *************************************************************************************************/
 
 
-import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Inject, ViewChild, ElementRef, EventEmitter, Output } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Router } from '@angular/router';
+import { EditLableComponent } from '../edit-lable/edit-lable.component';
 
+export interface DialogData {
+ data: "akshaya"
+}
 /**
  * @title Injecting data when opening a dialog
  */
@@ -32,10 +36,10 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
   message : any;
-
+  content : any;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router, public dialog: MatDialog) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -57,29 +61,25 @@ ngOnInit(){
   isclick() {
     return false;
   }
+  openLabel(){
+    console.log("Lable clicked..");
+    const dialogRef = this.dialog.open(EditLableComponent, {
+      width: '350px',
+      // data: this.content
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     
+    });
 
-  // step = 0;
-
-  // setStep(index: number) {
-  //   this.step = index;
+  }
+  // @Output() lableEvent = new EventEmitter<string>();
+  // lable(){
+    
   // }
 
-  // nextStep() {
-  //   this.step++;
-  // }
 
-  // prevStep() {
-  //   this.step--;
-  // }
-
-  // close(num: number) {
-  //   this.setStep(num);
-  // }
-
-  // check(num: number) {
-  //   this.setStep(num);
-  // }
 
   addAccount() {
     this.router.navigate(['register']);

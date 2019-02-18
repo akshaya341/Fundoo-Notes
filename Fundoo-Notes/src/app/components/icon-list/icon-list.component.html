@@ -27,19 +27,19 @@
       <button [matMenuTriggerFor]="menu5" matTooltip="change color" mat-icon-button >
         <mat-icon>color_lens</mat-icon>
       </button>
-      <mat-menu #menu5="matMenu" class="colorsMenu" >
-        <button mat-mini-fab matTooltip="white" class="white"> </button>
-        <button mat-mini-fab matTooltip="red" class="red"></button>
-        <button mat-mini-fab matTooltip="orange" class="orange"></button>
-        <button mat-mini-fab matTooltip="yellow" class="yellow"></button><br>
-        <button mat-mini-fab matTooltip="green" class="green"></button>
-        <button mat-mini-fab matTooltip="teal" class="teal"></button>
-        <button mat-mini-fab matTooltip="Blue" class="blue"></button>
-        <button mat-mini-fab matTooltip="Dark Blue" class=darkblue></button><br>
-        <button mat-mini-fab matTooltip="purple" class="purple"></button>
-        <button mat-mini-fab matTooltip="pink" class="pink"></button>
-        <button mat-mini-fab matTooltip="Brown" class="Brown"></button>
-        <button mat-mini-fab matTooltip="Gray" class="gray"></button>
+      <mat-menu #menu5="matMenu" class="colorsMenu" (click)="colorHit()" >
+        <button mat-mini-fab matTooltip="white" class="white" style="background-color :#FFFFFF;"> </button>
+        <button mat-mini-fab matTooltip="red" class="red" style="background-color: #FF0000"></button>
+        <button mat-mini-fab matTooltip="orange" class="orange" style="background-color: rgb(236, 169, 45)"></button>
+        <button mat-mini-fab matTooltip="yellow" class="yellow" style="background-color: #FFFF00"></button><br>
+        <button mat-mini-fab matTooltip="green" class="green" style="background-color: #228B22"></button>
+        <button mat-mini-fab matTooltip="teal" class="teal" style="background-color:#008080"></button>
+        <button mat-mini-fab matTooltip="Blue" class="blue" style="background-color:#0000FF" ></button>
+        <button mat-mini-fab matTooltip="Dark Blue" class="darkblue" style="background-color:#0000CD"></button><br>
+        <button mat-mini-fab matTooltip="purple" class="purple" style="background-color: #800080 "></button>
+        <button mat-mini-fab matTooltip="pink" class="pink" style="background-color:#FFC0CB "></button>
+        <button mat-mini-fab matTooltip="Brown" class="Brown" style="background-color: #A52A2A "></button>
+        <button mat-mini-fab matTooltip="Gray" class="gray" style="background-color: #808080" ></button>
 
       </mat-menu>
 

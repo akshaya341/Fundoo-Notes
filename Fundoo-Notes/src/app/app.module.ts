@@ -15,6 +15,7 @@ import { MaincardComponent } from './components/maincard/maincard.component';
 import { NoteComponent } from './components/note/note.component';
 import { IconListComponent } from './components/icon-list/icon-list.component';
 import { ContentComponent } from './components/content/content.component';
+import { EditLableComponent } from './components/edit-lable/edit-lable.component';
 // import { ComponentsComponent } from './components/components/components.component';
 
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -31,6 +32,7 @@ import { ContentComponent } from './components/content/content.component';
     NoteComponent,
     IconListComponent,
     ContentComponent,
+    EditLableComponent,
    
   ],
   imports: [
@@ -38,7 +40,9 @@ import { ContentComponent } from './components/content/content.component';
     AppRoutingModule,
     HttpClientModule ,
    AppMaterial
-    
+  ],
+  exports : [
+    EditLableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
+  postJSON(url: string, body: any): any {
+   this.baseUrl+url;
+   const httpOptions={
+     headers : new HttpHeaders({
+     'const-Type' : 'application/json'
+     })
+   }
+   return this.http.post(url,body,httpOptions)
+  }
  
   baseUrl = "http://34.213.106.173/api/"
   static postRequest: any;
