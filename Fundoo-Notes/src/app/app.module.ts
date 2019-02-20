@@ -16,6 +16,11 @@ import { NoteComponent } from './components/note/note.component';
 import { IconListComponent } from './components/icon-list/icon-list.component';
 import { ContentComponent } from './components/content/content.component';
 import { EditLableComponent } from './components/edit-lable/edit-lable.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { ArchieveComponent } from './components/archieve/archieve.component';
+import { RouterModule } from '@angular/router';
+import { SearchComponent } from './components/search/search.component';
+import { SearchFilterPipe } from './pipe/search-filter.pipe';
 // import { ComponentsComponent } from './components/components/components.component';
 
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -33,11 +38,16 @@ import { EditLableComponent } from './components/edit-lable/edit-lable.component
     IconListComponent,
     ContentComponent,
     EditLableComponent,
+    UpdateNoteComponent,
+    ArchieveComponent,
+    SearchComponent,
+    SearchFilterPipe,
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // RouterModule.forRoot([]),
     HttpClientModule ,
    AppMaterial
   ],

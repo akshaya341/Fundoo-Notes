@@ -17,7 +17,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Router } from '@angular/router';
 import { EditLableComponent } from '../edit-lable/edit-lable.component';
-
+import { MatSnackBar} from '@angular/material'
 export interface DialogData {
  data: "akshaya"
 }
@@ -39,7 +39,8 @@ export class DashboardComponent implements OnInit {
   content : any;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router, public dialog: MatDialog) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router,
+     public dialog: MatDialog, private snackBar :MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -75,19 +76,21 @@ ngOnInit(){
     });
 
   }
-  // @Output() lableEvent = new EventEmitter<string>();
-  // lable(){
-    
-  // }
-
-
-
+  
   addAccount() {
     this.router.navigate(['register']);
   }
 
   signout(){
     this.router.navigate(['login']);
+  }
+  alert = "Note Archieved";
+  action = "undo";
+  archieve( message : String, action : String){
+    this.snackBar.open(this.alert, this.action,{
+      duration : 4000
+    })
+    
   }
 
 }

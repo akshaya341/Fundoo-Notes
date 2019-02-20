@@ -1,0 +1,18 @@
+
+<div >
+ <!-- <mat-form-field> -->
+   <p>{{message}}</p> 
+      <!-- </mat-form-field>  -->
+      
+      <div *ngIf="flag==true">
+         <button mat-raised-button disabled (click)="reverseFlag()">{{action}}</button>
+         <mat-icon>clear</mat-icon>
+      </div> 
+      
+      <div *ngIf="flag==false" >
+        <p>{{result}}</p>
+   </div>
+      
+      <!-- <button mat-button (click)="openSnackBar(message.value, action.value)">action</button> -->
+      
+</div>

@@ -24,11 +24,26 @@
         <mat-icon>person_add</mat-icon>
       </button>
 
-      <button [matMenuTriggerFor]="menu5" matTooltip="change color" mat-icon-button >
-        <mat-icon>color_lens</mat-icon>
+      <button [matMenuTriggerFor]="menu5" style="cursor: pointer;" aria-label="change color" matTooltip="change color" mat-icon-button >
+        <mat-icon>palette</mat-icon>
       </button>
-      <mat-menu #menu5="matMenu" class="colorsMenu" (click)="colorHit()" >
-        <button mat-mini-fab matTooltip="white" class="white" style="background-color :#FFFFFF;"> </button>
+      <mat-menu  #menu5="matMenu" [overlapTrigger]="false">
+          <ng-template matMenuContent >
+            <div class="buttons">
+                <div fxLayout=row fxLayoutGap=10px style="margin-top:5px" 
+                    *ngFor='let colors of colorArray'>
+                        <div *ngFor='let color of colors'>
+                            <button class="colors" [ngStyle]="{'background-color': color.color }" 
+                                (click)='colorsEdit(color.color)' matTooltip="{{color.name}}"
+                                    mat-mini-fab></button>
+                        </div>
+                </div>
+            </div>
+            </ng-template>
+          </mat-menu> 
+      <!-- <mat-menu #menu5="matMenu" class="colorsMenu" (click)="colorHit()" >
+        
+        <button mat-mini-fab (click)="white()" matTooltip="white" class="white" style="background-color :#FFFFFF;"> </button>
         <button mat-mini-fab matTooltip="red" class="red" style="background-color: #FF0000"></button>
         <button mat-mini-fab matTooltip="orange" class="orange" style="background-color: rgb(236, 169, 45)"></button>
         <button mat-mini-fab matTooltip="yellow" class="yellow" style="background-color: #FFFF00"></button><br>
@@ -40,19 +55,21 @@
         <button mat-mini-fab matTooltip="pink" class="pink" style="background-color:#FFC0CB "></button>
         <button mat-mini-fab matTooltip="Brown" class="Brown" style="background-color: #A52A2A "></button>
         <button mat-mini-fab matTooltip="Gray" class="gray" style="background-color: #808080" ></button>
-
-      </mat-menu>
+      </mat-menu> -->
 
       <button matTooltip="add image" mat-icon-button>
         <mat-icon>insert_photo</mat-icon>
       </button>
 
+      <button matTooltip="Archieve" (click)="archive()" mat-icon-button>
+        <mat-icon>archive</mat-icon>
+      </button>
 
       <button mat-icon-button [matMenuTriggerFor]="menu2" matTooltip="more">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu2="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="deleteNote()">
           <span>Delete note</span>
         </button>
         <button mat-menu-item>
@@ -74,3 +91,28 @@
 
       <!-- <button mat-button (click)="messageHit()" >close</button> -->
     </div> 
+
+
+
+
+
+
+
+
+
+<!-- <mat-icon style="cursor: pointer;" matTooltip="Change color" aria-label="change color" 
+[matMenuTriggerFor]="appMenu">palette </mat-icon>
+<mat-menu  #appMenu="matMenu" [overlapTrigger]="false">
+<ng-template matMenuContent >
+  <div class="buttons">
+      <div fxLayout=row fxLayoutGap=10px style="margin-top:5px" 
+          *ngFor='let colors of colorArray'>
+              <div *ngFor='let color of colors'>
+                  <button class="colors" [ngStyle]="{'background-color': color.color }" 
+                      (click)='colorsEdit(color.color)' matTooltip="{{color.name}}"
+                          mat-mini-fab></button>
+              </div>
+      </div>
+  </div>
+  </ng-template>
+</mat-menu> -->

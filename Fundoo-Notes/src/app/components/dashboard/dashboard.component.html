@@ -3,8 +3,8 @@
      
       <div fxFlex="5">
           <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-          <div fxFlex="5" fxLayout.gt-xs="row" fxFlex.gt-xs="500px" fxHide.xs>
-           
+          <div fxFlex="10" fxLayout.gt-xs="row" fxFlex.gt-xs="500px" fxHide.xs>
+              <!-- <img src="https://img.icons8.com/color/50/000000/google-keep.png"> -->
             <h1 class="example-app-name">Keep</h1>
           </div>
     
@@ -52,12 +52,13 @@
           </button>
       
       <button mat-icon-button [matMenuTriggerFor]="menu1" colour="basic"  matTooltip=" GOOGLE ACCOUNT "
-      [matTooltipClass]="'my-tooltip'">A
-      
+      [matTooltipClass]="'my-tooltip'">
+      <mat-icon>account_circle</mat-icon>
           </button>
         
           <mat-menu #menu1="matMenu">
-            <button mat-fab disabled id="imagebutton">
+            <button mat-fab disabled id="imagebutton"> 
+             
             </button>
       
             <p>Akshaya M I</p>
@@ -90,31 +91,32 @@
       
                 <mat-divider></mat-divider>
                 <p id="para">labels</p>
-                <mat-list-item role="listitem" (click)="openLabel()" id="lable" >
+                <mat-list-item role="listitem"  (click)="openLabel()" id="lable" >
                   <mat-icon id="edit">edit</mat-icon>
                   Edit label
                 </mat-list-item>
       
                 <mat-divider></mat-divider>
-                <mat-list-item role="listitem" id="arch">
+                <mat-list-item role="listitem"  id="arch" (click)="archieve()">
                   <img id="img4" src="../../../assets/image/archieve.svg" />
                   Archive</mat-list-item>
       
                 <mat-list-item role="listitem" id="bin">
                   <img id="img5" src="../../../assets/image/bin.svg" />
                   Trash</mat-list-item>
+                  
+
+                 
               </mat-list>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
-    <router-outlet>
-        <!-- <app-notecard></app-notecard> -->
-         <!-- <app-maincard (messageEvent)="recieveMessage($event)" ></app-maincard>  -->
-        <!-- <app-content (messageEvent)="recieveMessage($event)"></app-content> -->
-        
-      
-    </router-outlet>
-      
+    <router-outlet></router-outlet>
+
+    
+         <app-maincard (messageEvent)="recieveMessage($event)" ></app-maincard> 
+         <app-content></app-content>
+      <!-- <app-note></app-note> -->
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

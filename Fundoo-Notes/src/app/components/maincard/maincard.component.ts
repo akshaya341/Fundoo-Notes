@@ -15,10 +15,9 @@ export class MaincardComponent implements OnInit {
   noteTitle = new FormControl('',[Validators.required,Validators.required]);
   noteContent = new FormControl('',[Validators.required,Validators.required]);
   model : any;
-  
+  responce: any;
+  private color: any = "#fafafa";
   constructor(private httpService: HttpService, private router: Router) { }
-
-  colorArray = ["white", "red","orange", "yellow","green","teal","blue","darkblue","purple","pink","brown","gray"];
 
   ngOnInit() {
   }
@@ -31,7 +30,6 @@ export class MaincardComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter<string>();
 
-  //colorArray=["white", "red","orange", "yellow","green","teal","blue","darkblue","purple","pink","brown","gray"];
 
    addNote(){
     
@@ -49,13 +47,15 @@ export class MaincardComponent implements OnInit {
          checklist   : '',
          isPined   : false,
          isArchived : false,
-          color  : '',
+          color  : 'this.color',
           reminder : '',
           collaberators : ''
        }
         console.log("model data",this.model)
        this.httpService.encodedPostForm('notes/addNotes',this.model).subscribe(data =>{
         console.log("responace data",data);
+        this.responce = data;
+        console.log("id: ",this.responce.id );
         this.messageEvent.emit(this.model);
       },
       err =>
@@ -66,11 +66,10 @@ export class MaincardComponent implements OnInit {
      }
      
    }
-  
-  //  messageHit($event){
-  //   this.addNote=$event;
-  //   console.log("MessageHit" );
-  //  }
+   colorChanges(event) {
+    this.color = event;
+}
+
 
   reverseFlag($event) {
     this.flag = !this.flag;

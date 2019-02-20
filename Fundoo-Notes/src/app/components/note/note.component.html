@@ -1,59 +1,65 @@
-
 <!-- <app-maincard></app-maincard> -->
 
 
 
 
-<div class="mininote"  fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="98"  fxFlex="30">
-  <div *ngFor= "let items of card ; let i = index"  >
-  <div>
-    <mat-card  class="minicard" >
-        <div fxLayout="column"  >
-                <div fxFlex="90" (click)="openDialog(item)">{{items.title}}</div>
-            <div fxFlex="10" ><button mat-icon-button></button>
-    </div>
-    </div>
-        <mat-card-content fxLayout="column"> 
-                <div>{{items.description}}</div>
-            <app-icon-list fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
-    
-                </app-icon-list>
-    </mat-card-content> 
-    </mat-card>
- </div> 
-</div>
-</div>
-<!-- 
+<div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center" (colorEmit)=colorChanges($event) fxFlex.xs="98" fxLayoutGap="10px" fxFlex="80"   (deleteEvent)="deleteCard($event)">
+    <div *ngFor="let items of cards ; let i = index" >
+        <div >
+            <mat-card class="minicard" [style.backgroundColor]="items.color">
+                <div>
+                    <div fxLayout="row">
+                        <div (click)="openDialog(item)">{{items.title}}</div>
+                        <div fxLayout="row" fxLayoutAlign="end start"><button mat-icon-button>
+                            <!-- <img src="../../../assets/image/pinbar.svg" > -->
+                        </button>
+                        </div>
+                    </div>
 
-<div  fxLayout="row" >
-<div class="mininote" fxFlex.xs="98" *ngFor= "let items of card ; let i = index" >
+                    <div>{{items.description}}</div>
+                    <div class="icons-div">
+                        <app-icon-list fxLayout="row" fxLayoutAlign="space-between end">
 
-        <mat-card  class="minicard1" >
-            <p >
-                {{items.title}}
-            </p >
-            <p >
-                {{items.description}}
-            </p>
-            <app-icon-list fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
-    
-            </app-icon-list>
-        </mat-card>
-    </div>
-
-    </div> -->
-<!-- 
-    <div class="mininote"  fxLayout="row" fxLayoutAlign="center center" fxFlex.xs="98"  fxFlex="30">
-
-            <mat-card  class="minicard2" >
-                <p >
-                    ffdf
-                </p >
-                <p >
-                    kumar
-                </p>
-                <app-icon-list fxFlex="40" fxLayout="row" fxLayoutAlign="space-between end" >
-        
-                </app-icon-list>
+                        </app-icon-list>
+                    </div>
+                </div>
             </mat-card>
-        </div> -->
+        </div>
+    </div>
+</div>
+
+<!-- <div  fxLayout="row wrap" fxFlex = 100 fxLayoutAlign="center"  fxLayoutGap="10px"
+ style="margin-top:25px ;">
+ <div  fxLayout = "row" fxFlex.xs = 0 fxFlex.sm = 0 fxFlex.md = 5 fxFlex.lg = 5 fxFlex.xl = 10>
+ </div>
+ <div fxLayout = "row wrap" fxFlex.xs = 100 fxFlex.sm = 100 fxFlex.md = 90 
+   fxFlex.lg = 90 fxFlex.xl = 80 >
+  <div *ngFor='let notes of cardsArray | searchBar :  globalSearch'>
+    <div [ngClass]="{'grid':toggle,'list':!toggle}">
+      <mat-card style="margin-top : 10px; border-radius: 8px" 
+      [style.backgroundColor]="notes.color">
+        <app-pin [pinNote]="notes" (pinEvent)="deleteEvent($event)" class="pin"></app-pin>
+        <mat-card-title class="title" (click)="openDialog(notes)">
+          <div [innerHtml]="notes.title"></div>
+        </mat-card-title>    
+        <mat-card-content class="description" (click)="openDialog(notes)">
+          <div [innerHtml]="notes.description"></div>
+        </mat-card-content> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

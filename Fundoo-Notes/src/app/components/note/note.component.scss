@@ -3,9 +3,7 @@
    
     margin-top: 20px;
 }
-.Border{
-    border-color: white;
-}
+
 
 
 [contentEditable=true]:empty:not(:focus):before{
@@ -23,36 +21,31 @@
 
 
 .minicard{
-    background-color:brown;
+    background-color:rgb(76, 194, 174);
     margin-top: 10px;
-    height: 150px;
-    width: 280px;
+    height: 100px;
+    width: 220px;
 }
 
 
-.minicard1{
-    background-color: teal;
-    margin-top: 10px;
-    height: 150px;
-    width: 280px;
+
+
+
+.icons-div{
+    margin-left: 18%;
+    position: absolute;
+    bottom: 0;
 }
 
 
-.minicard2{
+
+.main{
     background-color: green;
     margin-top: 10px;
     height: 150px;
-    width: 280px;
+    width: 280px; 
 }
-// .mininote{
-//     width: 600px;
-// }
-
-
-
-.card{
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
-    border: 1px solid black;
+.mininote{
+    margin-left: 15%;
+    width: 90%;
 }

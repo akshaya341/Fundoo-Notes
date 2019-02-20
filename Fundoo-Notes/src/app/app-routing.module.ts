@@ -27,19 +27,13 @@ const routes: Routes = [
   {
     path:'dashboard',
     component: DashboardComponent,
-    children:[{
-      path:'',
-      redirectTo:'note',
-      pathMatch:'full'
-      
-    },
-
-    {
+    children:[   
+      {
       path:'note',
-      component : ContentComponent
+      component : NoteComponent
     },
       {
-        path:'app-content',
+        path:'content',
         component : ContentComponent
       },
     ]
@@ -53,6 +47,8 @@ const routes: Routes = [
     path:'resetpassword/:token',
     component:  ResetComponent
   },
+    {path: '**', redirectTo: 'login'}
+
 ];
 
 @NgModule({

@@ -9,16 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  // array : any [];
+  
   constructor( ) { }
 
   ngOnInit() {
   }
-  //  cards(){
-  //  for (let i = 0; i < this.array.length; i++) {
-  //    const element = this.array[i];
-  //    console.log(element);
-     
-  //  }
-  //  }
+ 
 }
