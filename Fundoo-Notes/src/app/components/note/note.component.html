@@ -3,22 +3,23 @@
 
 
 
-<div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center" (colorEmit)=colorChanges($event) fxFlex.xs="98" fxLayoutGap="10px" fxFlex="80"   (deleteEvent)="deleteCard($event)">
-    <div *ngFor="let items of cards ; let i = index" >
-        <div >
+<div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center"  fxFlex.xs="98"
+    fxLayoutGap="10px" fxFlex="80" >
+    <div *ngFor="let items of cards ; let i = index">
+        <div>
             <mat-card class="minicard" [style.backgroundColor]="items.color">
                 <div>
                     <div fxLayout="row">
                         <div (click)="openDialog(item)">{{items.title}}</div>
                         <div fxLayout="row" fxLayoutAlign="end start"><button mat-icon-button>
-                            <!-- <img src="../../../assets/image/pinbar.svg" > -->
-                        </button>
+                                <!-- <img src="../../../assets/image/pinbar.svg" > -->
+                            </button>
                         </div>
                     </div>
 
                     <div>{{items.description}}</div>
                     <div class="icons-div">
-                        <app-icon-list fxLayout="row" fxLayoutAlign="space-between end">
+                        <app-icon-list fxLayout="row" [card]="items" fxLayoutAlign="space-between end" (colorEmit)="Changescolor($event)" (childObject)="update($event)">
 
                         </app-icon-list>
                     </div>
@@ -27,39 +28,3 @@
         </div>
     </div>
 </div>
-
-<!-- <div  fxLayout="row wrap" fxFlex = 100 fxLayoutAlign="center"  fxLayoutGap="10px"
- style="margin-top:25px ;">
- <div  fxLayout = "row" fxFlex.xs = 0 fxFlex.sm = 0 fxFlex.md = 5 fxFlex.lg = 5 fxFlex.xl = 10>
- </div>
- <div fxLayout = "row wrap" fxFlex.xs = 100 fxFlex.sm = 100 fxFlex.md = 90 
-   fxFlex.lg = 90 fxFlex.xl = 80 >
-  <div *ngFor='let notes of cardsArray | searchBar :  globalSearch'>
-    <div [ngClass]="{'grid':toggle,'list':!toggle}">
-      <mat-card style="margin-top : 10px; border-radius: 8px" 
-      [style.backgroundColor]="notes.color">
-        <app-pin [pinNote]="notes" (pinEvent)="deleteEvent($event)" class="pin"></app-pin>
-        <mat-card-title class="title" (click)="openDialog(notes)">
-          <div [innerHtml]="notes.title"></div>
-        </mat-card-title>    
-        <mat-card-content class="description" (click)="openDialog(notes)">
-          <div [innerHtml]="notes.description"></div>
-        </mat-card-content> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

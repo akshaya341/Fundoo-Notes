@@ -11,6 +11,7 @@ import { SearchService } from '../../service/search.service';
 export class NoteComponent implements OnInit {
 
   cards : any [];
+  color : any;
   body :  any;
   noteObject : any;
   colorChanges : any;
@@ -39,28 +40,29 @@ export class NoteComponent implements OnInit {
     
   }
 
-  colorcode(){
-
-  }
-  
-  deleteCard(noteObject) {
-    console.log("note object",noteObject);
+  Changescolor($event){
+   
     
-    this.noteService.postTrash(
-    {
-    "isDeleted": true,
-    "noteIdList": [noteObject.id]
-    }).subscribe(data => {
-    console.log("trash responce",data);
-    // this.childObject.emit(noteObject);
-    }, err => {
-    console.log("delete responance",err);
-    })
-    }
-  
-  colorchange($event){
-     this.colorChanges=$event
-      
+    
+    this.color=$event;
+    console.log("received color change event ", this.color);
   }
+  
+  update(object){
+    if(object.type=='delete'){
+      let index=this.cards.indexOf(object);
+      this.cards.splice(index,1);
+    }else(object.type=='color')
+    {
+      this.getAllCard();
+    }
+  }
+  
+  // colorchange(){
+  //    this.colorChanges=$event
+      
+  // }
+
+ 
  
 }

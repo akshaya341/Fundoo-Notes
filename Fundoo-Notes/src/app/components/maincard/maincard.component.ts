@@ -16,7 +16,7 @@ export class MaincardComponent implements OnInit {
   noteContent = new FormControl('',[Validators.required,Validators.required]);
   model : any;
   responce: any;
-  private color: any = "#fafafa";
+   color: any = "#fafafa";
   constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {
@@ -66,9 +66,12 @@ export class MaincardComponent implements OnInit {
      }
      
    }
-   colorChanges(event) {
-    this.color = event;
-}
+   Changes($event){
+    
+     
+     this.color=$event;
+     console.log("im reached in main card",this.color);
+   }
 
 
   reverseFlag($event) {

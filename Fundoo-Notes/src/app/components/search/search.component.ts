@@ -19,16 +19,17 @@ export class SearchComponent implements OnInit {
     this.getNotes();
   }
   getNotes() {
-    this.noteService.getNotes()
+   this.noteService.getcard()
     
     .subscribe(data => {
         this.card = [];
+       
         for (var i = data["data"]['data'].length - 1; i >= 0; i--) {
-          if (data["data"]['data'][i].isDeleted == false &&
-            data["data"]['data'][i].isArchived == false) {
+         
             this.card.push(data["data"]['data'][i])
-          }
+          
         }
+       
       }, error => {
         console.log(error);
       })
