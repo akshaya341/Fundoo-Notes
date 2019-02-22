@@ -12,6 +12,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class MaincardComponent implements OnInit {
 
   flag = true;
+  flag1 = true;
   noteTitle = new FormControl('',[Validators.required,Validators.required]);
   noteContent = new FormControl('',[Validators.required,Validators.required]);
   model : any;
@@ -29,7 +30,7 @@ export class MaincardComponent implements OnInit {
  
 
   @Output() messageEvent = new EventEmitter<string>();
-
+ 
 
    addNote(){
     
@@ -47,13 +48,13 @@ export class MaincardComponent implements OnInit {
          checklist   : '',
          isPined   : false,
          isArchived : false,
-          color  : 'this.color',
+          color  : this.color,
           reminder : '',
           collaberators : ''
        }
         console.log("model data",this.model)
        this.httpService.encodedPostForm('notes/addNotes',this.model).subscribe(data =>{
-        console.log("responace data",data);
+        console.log("addNotes data",data);
         this.responce = data;
         console.log("id: ",this.responce.id );
         this.messageEvent.emit(this.model);
@@ -66,13 +67,13 @@ export class MaincardComponent implements OnInit {
      }
      
    }
-   Changes($event){
-    
-     
+   Changes($event){ 
      this.color=$event;
      console.log("im reached in main card",this.color);
    }
-
+   pinned(){
+    this.flag1 = !this.flag1;
+   }
 
   reverseFlag($event) {
     this.flag = !this.flag;

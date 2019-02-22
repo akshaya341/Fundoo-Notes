@@ -9,7 +9,7 @@ export class NoteServiceService {
  
 
   constructor(private httpService : HttpService,private http: HttpClient) { }
-  baseUrl = "http://34.213.106.173/api/"
+   baseUrl = "http://34.213.106.173/api/"
 
   postcolor(body){
     return this.httpService.postJSON('/note/changesColorNotes',body)
@@ -19,20 +19,22 @@ export class NoteServiceService {
          return this.httpService.getHttp('notes/getNotesList');
     }
 
-    postTrash(body){
-      return this.httpService.postJSON('notes/trashNotes',body)
-    }
-
-    // postTrash(body){
+    // deleteNote(body){
     //   console.log(body);
-      
-    //   const httpOptions ={
-    //     headers : new HttpHeaders({
-    //     'content-Type' : 'application/json',
-    //     'Authorization' : localStorage.getItem('token')
-  
-    //   })
-    //   }
-    //   return this.http.post(this.baseUrl+'notes/trashNotes',body,httpOptions);
+    //   return this.httpService.postJSON('notes/trashNotes',body)
     // }
+
+    deleteNote(body) :any{
+      console.log(body);
+      //const-Type
+      const httpOptions ={
+        headers : new HttpHeaders({
+        'content-Type' : 'application/json',  //
+        'Authorization' : localStorage.getItem('token')
+  
+      })
+      }
+      console.log(localStorage.getItem('token'));
+      return this.http.post(this.baseUrl+'notes/trashNotes',body,httpOptions);
+    }
 }

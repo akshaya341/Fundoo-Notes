@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output,ViewChild,AfterViewInit } from '@angular/core';
 import { NoteServiceService } from "../../service/note-service.service";
 import { EventEmitter } from 'events';
-import { SearchService } from '../../service/search.service';
+import { SearchService } from '../../service/searchService/search.service';
 
 @Component({
   selector: 'app-note',
@@ -19,6 +19,7 @@ export class NoteComponent implements OnInit {
   @Input() Search;
    @Input() card;
   @Output() child=new EventEmitter ();
+  
    parentmessage : true;
   ngOnInit() {
     this.getAllCard();
@@ -41,9 +42,6 @@ export class NoteComponent implements OnInit {
   }
 
   Changescolor($event){
-   
-    
-    
     this.color=$event;
     console.log("received color change event ", this.color);
   }

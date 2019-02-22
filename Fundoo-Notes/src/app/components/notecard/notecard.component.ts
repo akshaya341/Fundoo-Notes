@@ -18,9 +18,6 @@ export class NotecardComponent implements OnInit {
   }
   
   Changes($event){
-   
-    
-    
     this.color=$event;
     console.log("received color change event ", this.color);
   }

@@ -17,9 +17,9 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Router } from '@angular/router';
 import { EditLableComponent } from '../edit-lable/edit-lable.component';
-import { MatSnackBar} from '@angular/material'
+import { MatSnackBar } from '@angular/material'
 export interface DialogData {
- data: "akshaya"
+  data: "akshaya"
 }
 /**
  * @title Injecting data when opening a dialog
@@ -35,62 +35,62 @@ export interface DialogData {
 
 export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
-  message : any;
-  content : any;
+  message: any;
+  content: any;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router,
-     public dialog: MatDialog, private snackBar :MatSnackBar) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,
+    public dialog: MatDialog, private snackBar: MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
-ngOnInit(){
+  ngOnInit() {
 
-}
+  }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  recieveMessage($event){
-    this.message= $event ;
-    console.log ("event data..", this.message);
+  recieveMessage($event) {
+    this.message = $event;
+    console.log("event data..", this.message);
   }
 
-  
+
 
   isclick() {
     return false;
   }
-  openLabel(){
+  openLabel() {
     console.log("Lable clicked..");
     const dialogRef = this.dialog.open(EditLableComponent, {
       width: '350px',
       // data: this.content
-      
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-     
+
     });
 
   }
-  
+
   addAccount() {
     this.router.navigate(['register']);
   }
 
-  signout(){
+  signout() {
     this.router.navigate(['login']);
   }
   alert = "Note Archieved";
   action = "undo";
-  archieve( message : String, action : String){
-    this.snackBar.open(this.alert, this.action,{
-      duration : 4000
+  archieve(message: String, action: String) {
+    this.snackBar.open(this.alert, this.action, {
+      duration: 4000
     })
-    
+
   }
 
 }

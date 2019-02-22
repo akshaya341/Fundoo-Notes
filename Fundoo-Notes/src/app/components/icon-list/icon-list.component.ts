@@ -65,20 +65,22 @@ export class IconListComponent implements OnInit {
 
   deleteNote(card) {
     this.isDeleted= !this.isDeleted;
-    console.log("isDeleted", this.isDeleted);
+    // console.log("isDeleted", this.isDeleted);
     console.log('deletino', card);
-    console.log("noteIdList",card.id)
-    this.noteService.postTrash({
+    console.log("noteIdList",card.id);
+    
+    this.noteService.deleteNote({
       "isDeleted": true,
-     " noteIdList": card.id,
+     "noteIdList": [card.id],
     
     }).subscribe(dataTrash =>{
      console.log("deleted responce", dataTrash);
-     this.childObject.emit(card);
+      this.childObject.emit(card);
     },
     err =>
     {
-     alert('Error occured')
+    //  alert('Error occured');
+    console.log(err);
     })
 
   }

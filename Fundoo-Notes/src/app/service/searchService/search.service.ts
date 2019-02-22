@@ -7,14 +7,19 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class SearchService {
   private messageSource = new Subject();
   private msgSource = new BehaviorSubject(false);
-  // currentMsg = this.msgSource.asObservable();
+  currentMsg = this.msgSource.asObservable();
   currentMessage = this.messageSource.asObservable();
-  // deletedLabel = this.messageSource.asObservable();
-  // viewList = this.messageSource.asObservable();
+
   constructor() { }
   changeMessage(message: string) {
-    this.messageSource.next(message)
-  }
- 
-  
+      this.messageSource.next(message)
+    }
+
 }
+
+
+
+
+
+
+

@@ -5,9 +5,9 @@
 
 <div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center"  fxFlex.xs="98"
     fxLayoutGap="10px" fxFlex="80" >
-    <div *ngFor="let items of cards ; let i = index">
-        <div>
-            <mat-card class="minicard" [style.backgroundColor]="items.color">
+    <div *ngFor="let items of cards | searchBar : Search; let i = index" >
+        <div [ngClass]="{'grid':toggle,'list':!toggle}">
+            <mat-card class="minicard" [style.backgroundColor]="items.color" >
                 <div>
                     <div fxLayout="row">
                         <div (click)="openDialog(item)">{{items.title}}</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteServiceService } from '../../service/note-service.service';
-import { SearchService } from '../../service/search.service';
+import { SearchService } from '../../service/searchService/search.service';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -10,6 +11,7 @@ import { SearchService } from '../../service/search.service';
 export class SearchComponent implements OnInit {
   private card: any[];
   private Search: any;
+ 
   constructor(private noteService : NoteServiceService, private data: SearchService ) { }
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class SearchComponent implements OnInit {
         this.card = [];
        
         for (var i = data["data"]['data'].length - 1; i >= 0; i--) {
-         
+          
             this.card.push(data["data"]['data'][i])
           
         }
@@ -35,3 +37,6 @@ export class SearchComponent implements OnInit {
       })
     }
 }
+
+
+

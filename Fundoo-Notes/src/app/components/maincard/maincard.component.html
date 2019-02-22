@@ -1,6 +1,6 @@
 <div *ngIf="flag==true"   (click)="reverseFlag()" fxLayout="row" fxLayoutAlign="space-around start" fxFlex="100">
-  <mat-card fxFlex="50" fxFlex.xs='97' class="matcard" fxLayoutAlign="space-between center" [style.backgroundColor]=red>
-
+  <mat-card fxFlex="50" fxFlex.xs='97' class="matcard" fxLayoutAlign="space-between center"  >
+    <!-- -->
     <div data-text="Take a note.." class="Border" id="noteTitle" fxLayout="column" contenteditable="true" class="maincard">
     </div>
 
@@ -10,6 +10,7 @@
       <mat-icon class="brush" matTooltip="Drawing is not available">brush</mat-icon>
 
       <mat-icon class="insert" matTooltip="New note with image">insert_photo</mat-icon>
+      
     </div>
 
   </mat-card>
@@ -23,16 +24,31 @@
 
 <div *ngIf="flag==false" fxLayout="row" fxLayoutAlign="space-around start" fxFlex="100">
 
-  <mat-card fxLayout="column" class="matcard" fxFlex="50" fxFlexOffset.xl="20" fxFlex.xs='97' >
-
-    <div contenteditable="true" data-text="Title"  id="noteContent" [formControl]="noteTitle" fxLayout="column" class="title" >
+  <mat-card fxLayout="column" class="matcard" fxFlex="50" fxFlexOffset.xl="20" fxFlex.xs='97' [style.backgroundColor]="color">
+    <div fxLayout="row" fxLayoutAlign="end start" >
+    <button  mat-icon-button color="basic" (click)="pinned()">
+      <div class="barpin" *ngIf="flag1==true"   >
+        
+            <img src="../../../assets/image/note.svg" />
+        
+      </div>
+      <div class="barpin"  *ngIf="flag1==false"  >
+         
+          <img  src="../../../assets/image/pinbar.svg">
+      </div>
+    </button>
+  </div>
+    <div contenteditable="true" data-text="Title" fxFlex="30" id="noteContent" [formControl]="noteTitle" fxLayout="column" class="title" >
+      
     </div>
-
+   
+   
+    
     <!-- <div contenteditable="true" data-text="Take a note.." class="Border" fxLayout="column" class="takenote">
 
     </div> -->
     <div class="Border" fxLayout="column" class="takenote">
-      <textarea matTextareaAutosize placeholder="Take a note.. " [formControl]="noteContent" class="textArea"></textarea>
+      <textarea class="textArea" matTextareaAutosize placeholder="Take a note.. " [formControl]="noteContent" class="textArea"></textarea>
     </div>
       <div fxFlex="10"  fxLayout="row" fxLayoutAlign="space-between end" >
           <app-icon-list fxLayoutAlign="end end" (colorEmit)="Changes($event)" ></app-icon-list>
