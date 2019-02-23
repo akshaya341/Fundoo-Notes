@@ -13,8 +13,12 @@ export class NoteComponent implements OnInit {
   cards : any [];
   color : any;
   body :  any;
+  trashcards : any [];
+  cardsArray : any[];
   noteObject : any;
   colorChanges : any;
+  istrash = false;
+  flag= false;
   constructor(private noteService:NoteServiceService,private data: SearchService) { }
   @Input() Search;
    @Input() card;
@@ -23,13 +27,26 @@ export class NoteComponent implements OnInit {
    parentmessage : true;
   ngOnInit() {
     this.getAllCard();
-
+    this.getTrashCard();
   }
+
   getAllCard(){
   this.noteService.getcard().subscribe(data=>{
-    
     this.cards=data['data']['data'];
     this.cards.reverse();
+     console.log("total cards", this.cards)
+   for (let i = 0; i < this.cards.length; i++) {
+    //  const element = array[i];
+    if(this.cards[i].isDeleted=true){ 
+      this.trashcards=this.cards;
+    }
+    else{
+     this.cardsArray=this.cards;
+    }
+   }
+  //  console.log("cards after trashArray",this.trashcards);
+  //  console.log("cards after cardsArray",this.cardsArray);
+   
      this.noteObject=this.cards;
    
     console.log('card ',this.cards);
@@ -45,6 +62,23 @@ export class NoteComponent implements OnInit {
     this.color=$event;
     console.log("received color change event ", this.color);
   }
+
+  getTrash(){
+  this.flag= !this.flag ;
+  }
+
+  getTrashCard(){
+   
+    this.noteService.getTrash().subscribe(data => {
+      this.trashcards= data['data']['data'];
+      this.trashcards.reverse();
+      console.log("trash cards ", this.trashcards);
+    },
+    err =>{
+      console.log(err);
+    }
+    )
+  }
   
   update(object){
     if(object.type=='delete'){
@@ -56,10 +90,7 @@ export class NoteComponent implements OnInit {
     }
   }
   
-  // colorchange(){
-  //    this.colorChanges=$event
-      
-  // }
+
 
  
  

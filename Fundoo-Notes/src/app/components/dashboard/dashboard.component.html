@@ -101,11 +101,11 @@
             <img id="img4" src="../../../assets/image/archieve.svg" />
             Archive</mat-list-item>
 
-          <mat-list-item role="listitem" id="bin">
+          <mat-list-item role="listitem" id="bin"   (click)="openTrash()">
             <img id="img5" src="../../../assets/image/bin.svg" />
             Trash</mat-list-item>
 
-
+            <!-- [routerLink]="['/trash']" -->
 
         </mat-list>
       </mat-nav-list>
@@ -113,10 +113,11 @@
     <mat-sidenav-content>
       <router-outlet></router-outlet>
 
-
+     
       <app-maincard (messageEvent)="recieveMessage($event)"></app-maincard>
       <app-content></app-content>
       <!-- <app-note></app-note> -->
+      <!-- <app-trash></app-trash> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

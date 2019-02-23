@@ -7,6 +7,7 @@ import { ForgetComponent } from './components/forget/forget.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { NoteComponent } from './components/note/note.component';
 import { ContentComponent } from './components/content/content.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
         path:'content',
         component : ContentComponent
       },
+      {
+        path : 'trash',
+        component : TrashComponent
+      }
     ]
     
   },

@@ -17,14 +17,7 @@ export class EditLableComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  // close() : void {
-
-  //     // this.dialogRef.close();
-  //   }
-
-   
-   
+ 
     onNoClick(): void {
       this.dialogRef.close();
       console.log("im in edit label")

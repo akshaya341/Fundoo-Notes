@@ -76,6 +76,10 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+  @Output() deleteEvent = new EventEmitter<string>();
+  openTrash(){
+     this.deleteEvent.emit();
+  }
 
   addAccount() {
     this.router.navigate(['register']);

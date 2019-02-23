@@ -1,10 +1,14 @@
 <div  fxFlex="100" > 
   <h4>Edit labels</h4>
   <div mat-dialog-content fxLayout="row" fxLayoutAlign="center center"> 
-    <mat-icon class="iconadd">add</mat-icon>
+    <div >
+          <mat-icon class="iconadd">close</mat-icon>
+  </div>
       <!-- <mat-form-field class="lablearea" > -->
+       
           <input matInput [formControl]="label_content" autocomplete="off" class="editInput">
         <!-- </mat-form-field> -->
+     
         <mat-icon class="iconcheck">check</mat-icon>
   </div>
   

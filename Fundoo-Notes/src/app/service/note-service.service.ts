@@ -18,7 +18,9 @@ export class NoteServiceService {
     getcard(){
          return this.httpService.getHttp('notes/getNotesList');
     }
-
+    getTrash(){
+      return this.httpService.getHttp('notes/getTrashNotesList')
+    }
     // deleteNote(body){
     //   console.log(body);
     //   return this.httpService.postJSON('notes/trashNotes',body)
@@ -29,7 +31,7 @@ export class NoteServiceService {
       //const-Type
       const httpOptions ={
         headers : new HttpHeaders({
-        'content-Type' : 'application/json',  //
+        'content-Type' : 'application/json',  
         'Authorization' : localStorage.getItem('token')
   
       })
