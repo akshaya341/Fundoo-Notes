@@ -57,6 +57,16 @@ export class HttpService {
     return this.http.post(url, this.getEncodedData(data),httpOptions);
   }
 
+  encodedGetForm(url: any) {
+    url = this.baseUrl + url;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded',
+      })
+    };
+    return this.http.get(url, httpOptions)
+  }
+
   PostHeader(url: any, data: any){
     url=this.baseUrl+url;
     const httpOptions ={

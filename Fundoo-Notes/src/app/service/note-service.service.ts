@@ -36,7 +36,15 @@ export class NoteServiceService {
   
       })
       }
-      console.log(localStorage.getItem('token'));
       return this.http.post(this.baseUrl+'notes/trashNotes',body,httpOptions);
     }
+
+    postArchive(body) {
+      return this.httpService.postJSON('notes/archiveNotes', body)
+    }
+
+    getArchiveNotes() {
+      return this.httpService.encodedGetForm('notes/getArchiveNotesList')
+    }
+
 }

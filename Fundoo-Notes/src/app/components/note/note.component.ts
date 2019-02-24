@@ -19,15 +19,18 @@ export class NoteComponent implements OnInit {
   colorChanges : any;
   istrash = false;
   flag= false;
+  private toggle: any = false;
   constructor(private noteService:NoteServiceService,private data: SearchService) { }
   @Input() Search;
    @Input() card;
   @Output() child=new EventEmitter ();
+  @Input() arrayCards;
   
    parentmessage : true;
   ngOnInit() {
     this.getAllCard();
     this.getTrashCard();
+    this.switchView();
   }
 
   getAllCard(){
@@ -37,15 +40,15 @@ export class NoteComponent implements OnInit {
      console.log("total cards", this.cards)
    for (let i = 0; i < this.cards.length; i++) {
     //  const element = array[i];
-    if(this.cards[i].isDeleted=true){ 
-      this.trashcards=this.cards;
+    if(this.cards[i].isDeleted ==true){ 
+      this.trashcards[i++].push(this.cards[i]);
     }
     else{
-     this.cardsArray=this.cards;
+     this.cardsArray[i++].push(this.cards[i]);
     }
    }
-  //  console.log("cards after trashArray",this.trashcards);
-  //  console.log("cards after cardsArray",this.cardsArray);
+   console.log("cards after trashArray",this.trashcards);
+   console.log("cards after cardsArray",this.cardsArray);
    
      this.noteObject=this.cards;
    
@@ -65,6 +68,14 @@ export class NoteComponent implements OnInit {
 
   getTrash(){
   this.flag= !this.flag ;
+  }
+
+  switchView() {
+    {
+      this.data.viewList.subscribe(message => {
+        this.toggle = message;
+      })
+    }
   }
 
   getTrashCard(){

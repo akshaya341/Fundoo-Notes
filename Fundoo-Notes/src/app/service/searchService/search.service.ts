@@ -9,7 +9,7 @@ export class SearchService {
   private msgSource = new BehaviorSubject(false);
   currentMsg = this.msgSource.asObservable();
   currentMessage = this.messageSource.asObservable();
-
+  viewList = this.messageSource.asObservable();
   constructor() { }
   changeMessage(message: string) {
       this.messageSource.next(message)

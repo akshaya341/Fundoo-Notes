@@ -1,9 +1,15 @@
+<div fxLayout="row wrap" class="archive" fxLayoutAlign="center center">
+   Your Archived Notes Appear Here
+</div>
 
-<div >
- <!-- <mat-form-field> -->
+<app-note [arrayCards]="unPinData"></app-note>
+
+
+
+<!-- <div >
+
    <p>{{message}}</p> 
-      <!-- </mat-form-field>  -->
-      
+     
       <div *ngIf="flag==true">
          <button mat-raised-button disabled (click)="reverseFlag()">{{action}}</button>
          <mat-icon>clear</mat-icon>
@@ -13,6 +19,5 @@
         <p>{{result}}</p>
    </div>
       
-      <!-- <button mat-button (click)="openSnackBar(message.value, action.value)">action</button> -->
       
-</div>
+</div> -->

@@ -16,8 +16,11 @@
         <button mat-icon-button>
           <mat-icon>search</mat-icon>
         </button>
-        <input fxFlex="90" [(ngModel)]="value" (keyup)="onKeyUp($event)"  matInput placeholder="search"
-          [style.fontSize.px]="18" class="searchText" autocomplete="off">
+        <input fxFlex="90" type="input" [(ngModel)]="Search"  matInput placeholder="Search"
+          [style.fontSize.px]="18" (keyup)="lookFor()" (click)="goSearch()" class="searchText" autocomplete="off">
+         
+
+
 
       </mat-form-field>
     </div>
@@ -117,7 +120,9 @@
       <app-maincard (messageEvent)="recieveMessage($event)"></app-maincard>
       <app-content></app-content>
       <!-- <app-note></app-note> -->
-      <!-- <app-trash></app-trash> -->
+      <app-trash></app-trash>
+      <!-- <app-archieve></app-archieve>
+      <app-search></app-search> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

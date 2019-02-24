@@ -18,6 +18,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { Router } from '@angular/router';
 import { EditLableComponent } from '../edit-lable/edit-lable.component';
 import { MatSnackBar } from '@angular/material'
+import { SearchService } from '../../service/searchService/search.service';
 export interface DialogData {
   data: "akshaya"
 }
@@ -37,10 +38,11 @@ export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
   message: any;
   content: any;
+  Search : any;
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,
-    public dialog: MatDialog, private snackBar: MatSnackBar) {
+    public dialog: MatDialog, private data: SearchService, private snackBar: MatSnackBar) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -95,6 +97,14 @@ export class DashboardComponent implements OnInit {
       duration: 4000
     })
 
+  }
+
+  goSearch() {
+    this.router.navigate(['dashboard/Search']);
+  }
+
+  lookFor() {
+    this.data.changeMessage(this.Search)
   }
 
 }

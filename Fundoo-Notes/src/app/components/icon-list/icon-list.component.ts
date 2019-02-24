@@ -23,6 +23,7 @@ export class IconListComponent implements OnInit {
   @Output() colorchange = new EventEmitter();
   @Output() childObject = new EventEmitter();
   @Output() deleteEvent = new EventEmitter();
+  @Output() deleteCard = new EventEmitter();
   // @Input () delete;
   @Input() card: any;
   colorArray = [[{ 'color': '#FFFFFF', 'name': 'White' },
@@ -76,6 +77,8 @@ export class IconListComponent implements OnInit {
     }).subscribe(dataTrash =>{
      console.log("deleted responce", dataTrash);
       this.childObject.emit(card);
+      // this.deleteCard.emit({
+      // })
     },
     err =>
     {
