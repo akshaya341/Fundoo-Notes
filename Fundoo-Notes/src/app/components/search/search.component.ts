@@ -9,8 +9,8 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  private arrayCard: any[];
-  private Search: any;
+   arrayCard: any[];
+   Search: any;
   destroy$: Subject<boolean> = new Subject<boolean>(); 
   constructor(private noteService : NoteServiceService, private data: SearchService ) { }
 

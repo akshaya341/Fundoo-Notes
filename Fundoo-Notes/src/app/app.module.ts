@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
 import { SearchComponent } from './components/search/search.component';
 import { SearchFilterPipe } from './pipe/search-filter.pipe';
 import { TrashComponent } from './components/trash/trash.component';
+import {AddArchiveComponent} from './components/add-archive/add-archive.component';
 // import { ComponentsComponent } from './components/components/components.component';
 
    // import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -44,6 +45,7 @@ import { TrashComponent } from './components/trash/trash.component';
     SearchComponent,
     SearchFilterPipe,
     TrashComponent,
+    AddArchiveComponent
    
   ],
   imports: [

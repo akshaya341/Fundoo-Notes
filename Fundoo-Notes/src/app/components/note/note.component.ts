@@ -38,15 +38,13 @@ export class NoteComponent implements OnInit {
     this.cards=data['data']['data'];
     this.cards.reverse();
      console.log("total cards", this.cards)
-   for (let i = 0; i < this.cards.length; i++) {
-    //  const element = array[i];
-    if(this.cards[i].isDeleted ==true){ 
-      this.trashcards[i++].push(this.cards[i]);
-    }
-    else{
-     this.cardsArray[i++].push(this.cards[i]);
-    }
-   }
+     this.trashcards = this.cards.filter(function (el) {
+      return (el.isDeleted === true);
+  });
+     this.cardsArray = this.cards.filter(function (el){
+       return (el.isDeleted === false && el.isArchived === false && el.isPined === false)
+     }) ;  
+
    console.log("cards after trashArray",this.trashcards);
    console.log("cards after cardsArray",this.cardsArray);
    

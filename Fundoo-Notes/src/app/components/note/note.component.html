@@ -5,7 +5,7 @@
 <div>
     <div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex.xs="98" fxLayoutGap="10px" fxFlex="80">
 
-        <div *ngFor="let items of cards | searchBar : Search; let i = index">
+        <div *ngFor="let items of cardsArray | searchBar : Search; let i = index">
             <div [ngClass]="{'grid':toggle,'list':!toggle}">
                 <mat-card class="minicard" [style.backgroundColor]="items.color">
                     <div>

@@ -3,21 +3,179 @@
 
     <button id="Remaind" matTooltip="Remaind me" mat-icon-button [matMenuTriggerFor]="menu4">
       <mat-icon>notification_important</mat-icon>
-    </button>
+    </button >
     <mat-menu #menu4="matMenu" class="matmenu">
-      <button class="arrow" mat-stroked-button>
-        <mat-icon matTooltip="go back"> arrow_back</mat-icon>
-      </button>
-      <p>Pick date & time</p>
+      <div class="remaindMenu" >
+          <mat-nav-list>
+              <mat-list role="List">
+
+                <mat-list-item role="listitem">
+                    <h5>Reminder : </h5>
+                </mat-list-item>
+                <mat-list-item>
+                   <p>Later Today  8:00 PM</p> 
+                </mat-list-item>
+                <mat-list-item>
+                 <p> Tomarrow  8:00 AM</p>
+                </mat-list-item>
+                <mat-list-item>
+                 <p> Next week  Mon, 8:00AM</p>
+                </mat-list-item>
+                <mat-list-item>
+                  <button mat-menu-item  [matMenuTriggerFor]="menu6" >
+                      <mat-icon>
+                          <img src="../../../assets/image/outline-schedule-24px.svg"/>
+                        </mat-icon>
+                        Pick date and Time
+                  </button>
+                 
+                </mat-list-item>
+                <div class="menu6">
+                <mat-menu #menu6="matMenu">
+                 
+                    <mat-nav-list>
+                        <mat-list role="List">
+                  <div class="pickdate">
+                    <!-- <mat-list-item id="arrowSymbol">
+                    <button  mat-menu-item >
+                        <mat-icon>
+                            <img src="../../../assets/image/outline-keyboard_backspace-24px.svg"/>
+                          </mat-icon>
+                    </button>
+                  </mat-list-item> -->
+                  <mat-list-item id="pickAdjust">
+
+                      <span>Pick date and Time </span>
+                     </mat-list-item>
+                  
+                    </div>
+
+                    <mat-list-item>
+                        <mat-form-field class="example-full-width">
+                          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                          <mat-datepicker-toggle matSuffix [for]="picker">
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                          </mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                          </mat-list-item>
+                  
+                    <button mat-menu-item [matMenuTriggerFor]="menu9">Pick date and Time </button>
+                    <mat-menu #menu9="matMenu">
+                        <button mat-menu-item>
+                          <span>Morning 8:00AM</span>
+                        </button>
+                        <button mat-menu-item >
+                          <span>Afternoon 1:00PM</span>
+                        </button>
+                        <button mat-menu-item>
+                          <span>Evening 6:00PM</span>
+                        </button>
+                        <button mat-menu-item>
+                          <span>Night 8:00PM</span>
+                        </button>
+                        <button mat-menu-item>
+                          <span>Custom</span>
+                        </button>
+                      </mat-menu>
+                    <mat-list-item>
+                      <button mat-menu-item [matMenuTriggerFor]="menu10">Does not repeat</button>
+                       <mat-menu #menu10="matMenu">
+                         <button mat-menu-item>
+                           <span>Does not repeat</span>
+                         </button>
+
+                         <button  mat-menu-item >
+                            <span>Daily</span>
+                          </button>
+                         <button  mat-menu-item >
+                           <span>weekly</span>
+                         </button>
+                         <button  mat-menu-item >
+                           <span>monthly</span>
+                         </button>
+                         <button  mat-menu-item >
+                           <span>yearly</span>
+                         </button>
+                         <button  mat-menu-item >
+                            <span>Custom</span>
+                          </button>
+                       </mat-menu>
+                     
+                    </mat-list-item>
+
+                    </mat-list>
+                  </mat-nav-list>
+                   
+                  </mat-menu>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- <mat-menu #menu6="matMenu">
+                   <div>
+                
+                    <button mat-icon-button>
+                    <mat-icon>
+                      <img src="../../../assets/image/outline-keyboard_backspace-24px.svg"/>
+                    </mat-icon>
+                    </button>
+                  </mat-list-item>
+
+                  <mat-list-item>
+
+                   <p>Pick date and Time </p>
+                  </mat-list-item>
+                </div>
+                  <mat-list-item>
+                    <mat-form-field class="example-full-width">
+                      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                      <mat-datepicker-toggle matSuffix [for]="picker">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                      </mat-list-item>
+                <mat-list-item>
+                  <button mat-icon-button [matMenuTriggerFor]="menu7">
+                   <p>{{selected}}</p>
+                  </button>
+                  <mat-menu #menu7="matMenu">
+                    <button mat-menu-item>
+                      <span>Morning 8:00AM</span>
+                    </button>
+                    <button mat-menu-item >
+                      <span>Afternoon 1:00PM</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Evening 6:00PM</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Night 8:00PM</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Custom</span>
+                    </button>
+                  </mat-menu>
+                  
+                </mat-list-item>
+                     
+                </mat-menu> -->
+                 
+                </mat-list>
+                </mat-nav-list>
+      
+    
       <mat-divider></mat-divider>
 
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
+     
 
-
+    </div>
     </mat-menu>
 
     <button class="collaborator" matTooltip="collaborator" mat-icon-button>
@@ -41,21 +199,7 @@
           </div>
           </ng-template>
         </mat-menu> 
-    <!-- <mat-menu #menu5="matMenu" class="colorsMenu" (click)="colorHit()" >
-      
-      <button mat-mini-fab (click)="white()" matTooltip="white" class="white" style="background-color :#FFFFFF;"> </button>
-      <button mat-mini-fab matTooltip="red" class="red" style="background-color: #FF0000"></button>
-      <button mat-mini-fab matTooltip="orange" class="orange" style="background-color: rgb(236, 169, 45)"></button>
-      <button mat-mini-fab matTooltip="yellow" class="yellow" style="background-color: #FFFF00"></button><br>
-      <button mat-mini-fab matTooltip="green" class="green" style="background-color: #228B22"></button>
-      <button mat-mini-fab matTooltip="teal" class="teal" style="background-color:#008080"></button>
-      <button mat-mini-fab matTooltip="Blue" class="blue" style="background-color:#0000FF" ></button>
-      <button mat-mini-fab matTooltip="Dark Blue" class="darkblue" style="background-color:#0000CD"></button><br>
-      <button mat-mini-fab matTooltip="purple" class="purple" style="background-color: #800080 "></button>
-      <button mat-mini-fab matTooltip="pink" class="pink" style="background-color:#FFC0CB "></button>
-      <button mat-mini-fab matTooltip="Brown" class="Brown" style="background-color: #A52A2A "></button>
-      <button mat-mini-fab matTooltip="Gray" class="gray" style="background-color: #808080" ></button>
-    </mat-menu> -->
+   
 
     <button matTooltip="add image" mat-icon-button>
       <mat-icon>insert_photo</mat-icon>

@@ -1,3 +1,12 @@
-<p>
-  update-note works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+  <div class="styles" [style.backgroundColor]="">
+    <div contenteditable="true" id="titleId" class="reset" [formControl]="title" data-text=""></div><br>
+    <div contenteditable="true" id="notesId" class="edit" [formControl]="description" data-text=""></div><br>
+    <div>
+        <app-icon-list></app-icon-list>
+        <button  mat-button (click)="updateNote()" >close</button>
+    </div>
+   
+    </div>
+    </div>
+    

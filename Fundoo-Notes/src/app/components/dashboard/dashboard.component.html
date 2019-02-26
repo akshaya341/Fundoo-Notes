@@ -16,9 +16,9 @@
         <button mat-icon-button>
           <mat-icon>search</mat-icon>
         </button>
-        <input fxFlex="90" type="input" [(ngModel)]="Search"  matInput placeholder="Search"
-          [style.fontSize.px]="18" (keyup)="lookFor()" (click)="goSearch()" class="searchText" autocomplete="off">
-         
+        <input fxFlex="90" type="input" [(ngModel)]="Search" matInput placeholder="Search" [style.fontSize.px]="18"
+          (keyup)="lookFor()" (click)="goSearch()" class="searchText" autocomplete="off">
+
 
 
 
@@ -57,23 +57,36 @@
       <mat-icon>apps</mat-icon>
     </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu1" colour="basic" matTooltip=" GOOGLE ACCOUNT " [matTooltipClass]="'my-tooltip'">
-      <mat-icon>account_circle</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu1" colour="basic" matTooltip=" GOOGLE ACCOUNT " [matTooltipClass]="'my-tooltip'"
+    >
+      <mat-icon></mat-icon>
+      <!-- <img class="profile" src="../../../assets/image/profile.jpg"> -->
     </button>
+    
     <mat-menu #menu1="matMenu">
-      <button mat-fab disabled id="imagebutton">
+      <div class="profileMenu">
+      <div  fxLayout="row" fxLayoutAlign="start start" >
+          <button mat-fab disabled id="imagebutton"></button>
+             
 
-      </button>
-
-      <p>Akshaya M I</p>
-
-      <button mat-menu-item></button>
+      </div>
+     
+     
+      <div fxLayout="row" fxLayoutAlign="end start" class="userNameinf">
+      <p >Akshaya M I</p>
+    </div>
+    <div>
+      <p class="userEmail">akshayakumarmi97@gmail.com</p>
+    </div>
+    
       <mat-divider></mat-divider>
       <div>
         <button mat-flat-button (click)="addAccount()">Add account</button>
         <button mat-flat-button (click)="signout()">Sign out</button>
       </div>
+    </div>
     </mat-menu>
+  
   </mat-toolbar>
   <mat-divider></mat-divider>
 
@@ -88,27 +101,27 @@
             <img id="img1" src="../../../assets/image/note.svg" />
             Note</mat-list-item>
 
-          <mat-list-item role="listitem" id="rem">
+          <mat-list-item role="listitem" id="rem"  routerLinkActive="router-link-active" >
             <img id="img2" src="../../../assets/image/remainder.svg" />
             Remainder</mat-list-item>
 
           <mat-divider></mat-divider>
           <p id="para">labels</p>
-          <mat-list-item role="listitem" (click)="openLabel()" id="lable">
+          <mat-list-item role="listitem"  routerLinkActive="router-link-active"  (click)="openLabel()" id="lable">
             <mat-icon id="edit">edit</mat-icon>
             Edit label
           </mat-list-item>
 
           <mat-divider></mat-divider>
-          <mat-list-item role="listitem" id="arch" (click)="archieve()">
+          <mat-list-item role="listitem" routerLinkActive="router-link-active"  id="arch" (click)="archieve()">
             <img id="img4" src="../../../assets/image/archieve.svg" />
             Archive</mat-list-item>
 
-          <mat-list-item role="listitem" id="bin"   (click)="openTrash()">
+          <mat-list-item role="listitem" [routerLink]="['/trash']" routerLinkActive="router-link-active"  id="bin" (click)="openTrash()">
             <img id="img5" src="../../../assets/image/bin.svg" />
             Trash</mat-list-item>
 
-            <!-- [routerLink]="['/trash']" -->
+          <!-- [routerLink]="['/trash']" -->
 
         </mat-list>
       </mat-nav-list>
@@ -116,13 +129,14 @@
     <mat-sidenav-content>
       <router-outlet></router-outlet>
 
-     
-      <app-maincard (messageEvent)="recieveMessage($event)"></app-maincard>
-      <app-content></app-content>
+
+      <!-- <app-maincard (messageEvent)="recieveMessage($event)"></app-maincard>
+      <app-content></app-content> -->
       <!-- <app-note></app-note> -->
-      <app-trash></app-trash>
+      <!-- <app-trash></app-trash> -->
       <!-- <app-archieve></app-archieve>
       <app-search></app-search> -->
+      <!-- <app-update-note></app-update-note> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

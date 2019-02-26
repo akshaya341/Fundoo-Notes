@@ -39,10 +39,11 @@ export class DashboardComponent implements OnInit {
   message: any;
   content: any;
   Search : any;
+  userName : any ;
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,
-    public dialog: MatDialog, private data: SearchService, private snackBar: MatSnackBar) {
+    public dialog: MatDialog, private data: SearchService, private snackBar: MatSnackBar, ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

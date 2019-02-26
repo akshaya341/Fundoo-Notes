@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { NoteServiceService } from '../../service/note-service.service';
 import { MatSnackBar } from '@angular/material';
-import { getPlayers } from '@angular/core/src/render3/players';
 
 @Component({
   selector: 'app-icon-list',
@@ -46,6 +45,7 @@ export class IconListComponent implements OnInit {
   colorsEdit(id) {
     console.log(id);
     this.colorEmit.emit(id)
+
     if (this.color != undefined) {
       this.card.type = 'color'
      

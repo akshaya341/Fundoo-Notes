@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NoteServiceService } from '../../service/note-service.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { NoteServiceService } from '../../service/note-service.service';
 })
 export class TrashComponent implements OnInit {
   trashcards : any[]
-
+  childColor : any;
   constructor( private noteService : NoteServiceService) { }
 
   ngOnInit() {
     this.getTrashCard();
   }
-
+@Input() card ;
   getTrashCard(){
    
     this.noteService.getTrash().subscribe(data => {
@@ -27,5 +27,7 @@ export class TrashComponent implements OnInit {
     }
     )
   }
+
+ 
 
 }
