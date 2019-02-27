@@ -42,24 +42,30 @@ export class IconListComponent implements OnInit {
 
   ]]
 
-  colorsEdit(id) {
-    console.log(id);
+  colorsEdit(id,card) {
+    console.log('color is ',id)
+    console.log('card is ',card);
+    card.color=id;
     this.colorEmit.emit(id)
 
-    if (this.color != undefined) {
+      console.log('helw')
       this.card.type = 'color'
      
+//        const reqData = {
+//   "color": id,
+//   "noteIdList": [card.id]
+// }
+
+console.log(id ,'   ',card.id)
       this.noteService.postcolor({
         "color": id,
-        "noteIdList": [this.color.id]
+        "noteIdList": [card.id]
       }).subscribe(data => {
         console.log("color event reached ",data)
-        localStorage.setItem('colorId', this.color.id)
-        this.colorchange.emit({
-
-        })
+        // localStorage.setItem('colorId', this.color.id)
+        this.colorchange.emit(id);
       })
-    }
+    
   }
   
   

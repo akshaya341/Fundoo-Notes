@@ -14,7 +14,9 @@ export class SearchService {
   changeMessage(message: string) {
       this.messageSource.next(message)
     }
-
+    sendMessage(message: boolean) {
+      this.messageSource.next(message)
+    }
 }
 
 

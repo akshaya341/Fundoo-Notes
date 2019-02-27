@@ -9,6 +9,7 @@ import { NoteComponent } from './components/note/note.component';
 import { ContentComponent } from './components/content/content.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { SearchComponent } from './components/search/search.component';
+import { ArchieveComponent } from './components/archieve/archieve.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path : 'Search',
         component : SearchComponent
+      },
+      {
+        path : 'archive',
+        component : ArchieveComponent
       }
     ]
     
@@ -57,7 +62,7 @@ const routes: Routes = [
     path:'resetpassword/:token',
     component:  ResetComponent
   },
-    {path: '**', redirectTo: 'login'}
+    // {path: '**', redirectTo: 'login'}
 
 ];
 

@@ -40,6 +40,8 @@ export class DashboardComponent implements OnInit {
   content: any;
   Search : any;
   userName : any ;
+  isClicked = false;
+  titleName = '';
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,
@@ -67,6 +69,7 @@ export class DashboardComponent implements OnInit {
   }
   openLabel() {
     console.log("Lable clicked..");
+    this.titleName="Edit Lable"
     const dialogRef = this.dialog.open(EditLableComponent, {
       width: '350px',
       // data: this.content
@@ -93,12 +96,32 @@ export class DashboardComponent implements OnInit {
   }
   alert = "Note Archieved";
   action = "undo";
+
+ 
+  Note(){
+    this.titleName="Note"
+    this.router.navigate(['dashboard','note'])
+  }
+  Reminder(){
+    this.titleName="Reminder";
+    // this.router.navigate(['dashboard','Reminder']);
+  }
+
+  trash(){
+    this.titleName="Trash";
+    this.router.navigate(['dashboard','trash'])
+  }
+
+
   archieve(message: String, action: String) {
+    this.titleName="Archieve"
+    this.router.navigate(['dashboard', 'archive']);
     this.snackBar.open(this.alert, this.action, {
       duration: 4000
     })
 
   }
+  
 
   goSearch() {
     this.router.navigate(['dashboard/Search']);
@@ -106,6 +129,19 @@ export class DashboardComponent implements OnInit {
 
   lookFor() {
     this.data.changeMessage(this.Search)
+  }
+
+  grid(){
+   this.isClicked = !this.isClicked;
+  }
+
+  listView() {
+    this.data.sendMessage(true);
+   // this.list = 1;
+  }
+  gridView() {
+    this.data.sendMessage(false);
+    //this.list = 0;
   }
 
 }

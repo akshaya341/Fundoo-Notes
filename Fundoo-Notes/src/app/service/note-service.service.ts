@@ -12,7 +12,7 @@ export class NoteServiceService {
    baseUrl = "http://34.213.106.173/api/"
 
   postcolor(body){
-    return this.httpService.postJSON('/note/changesColorNotes',body)
+    return this.httpService.postJSON('notes/changesColorNotes',body)
   }
 
     getcard(){

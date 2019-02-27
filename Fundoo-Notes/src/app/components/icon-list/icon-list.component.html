@@ -63,10 +63,10 @@
                     <button mat-menu-item [matMenuTriggerFor]="menu9">Pick date and Time </button>
                     <mat-menu #menu9="matMenu">
                         <button mat-menu-item>
-                          <span>Morning 8:00AM</span>
+                          <span>Morning<span class="time8"> 8:00AM</span></span>
                         </button>
                         <button mat-menu-item >
-                          <span>Afternoon 1:00PM</span>
+                          <span>Afternoon    1:00PM</span>
                         </button>
                         <button mat-menu-item>
                           <span>Evening 6:00PM</span>
@@ -192,7 +192,7 @@
                   *ngFor='let colors of colorArray'>
                       <div *ngFor='let color of colors'>
                           <button class="colors" [ngStyle]="{'background-color': color.color }" 
-                              (click)='colorsEdit(color.color)' matTooltip="{{color.name}}"
+                              (click)='colorsEdit(color.color,card)' matTooltip="{{color.name}}"
                                   mat-mini-fab></button>
                       </div>
               </div>

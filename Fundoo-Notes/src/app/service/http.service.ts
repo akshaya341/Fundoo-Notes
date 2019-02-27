@@ -7,17 +7,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
+  baseUrl = "http://34.213.106.173/api/"
+
   postJSON(url: string, body: any): any {
-   this.baseUrl+url;
+   url=this.baseUrl+url;
+   console.log()
    const httpOptions={
      headers : new HttpHeaders({
-     'const-Type' : 'application/json'
+     'const-Type' : 'application/json',
+     'Authorization':localStorage.getItem('token')
      })
    }
    return this.http.post(url,body,httpOptions)
   }
  
-  baseUrl = "http://34.213.106.173/api/"
   static postRequest: any;
   constructor(private http: HttpClient) { }
 

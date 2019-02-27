@@ -10,7 +10,7 @@
                 <mat-card class="minicard" [style.backgroundColor]="items.color">
                     <div>
                         <div fxLayout="row">
-                            <div (click)="openDialog(item)">{{items.title}}</div>
+                            <div (click)="getNoteId(items)" >{{items.title}}</div>
                             <div fxLayout="row" fxLayoutAlign="end start"><button mat-icon-button>
                                     <!-- <img src="../../../assets/image/pinbar.svg" > -->
                                 </button>
@@ -19,7 +19,7 @@
 
                         <div>{{items.description}}</div>
                         <div class="icons-div">
-                            <app-icon-list fxLayout="row" [card]="items" fxLayoutAlign="space-between end" (colorEmit)="Changescolor($event)"
+                            <app-icon-list fxLayout="row" [card]="items" fxLayoutAlign="space-between end" (colorEmit)="Changescolor($event)" (colorchange)="colorChange($event)"
                                 (childObject)="update($event)">
 
                             </app-icon-list>

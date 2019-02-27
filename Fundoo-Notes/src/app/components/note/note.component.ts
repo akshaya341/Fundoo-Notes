@@ -20,6 +20,8 @@ export class NoteComponent implements OnInit {
   istrash = false;
   flag= false;
   private toggle: any = false;
+  noteId: any = "";
+  childColor: any = "";
   constructor(private noteService:NoteServiceService,private data: SearchService) { }
   @Input() Search;
    @Input() card;
@@ -62,8 +64,28 @@ export class NoteComponent implements OnInit {
   Changescolor($event){
     this.color=$event;
     console.log("received color change event ", this.color);
+    this.getAllCard();
   }
 
+  // colorChange($event){
+  //   console.log("recieved event to change card color",$event);
+  //   this.childColor = $event
+  //   }
+  // getNoteId(items){
+  //   console.log(items);
+  //   this.noteId = items.id;
+    
+  // }
+  // updateCardColor(){
+  //   var model : any ;
+  //   model={
+  //     "color" : this.childColor ,
+  //     "id" : this.noteId
+  //   }
+  //   this.noteService.postcolor(model).subscribe(color =>{
+  //     console.log(color.message);
+  //   })
+  // }
   getTrash(){
   this.flag= !this.flag ;
   }
