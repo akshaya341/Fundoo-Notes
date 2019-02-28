@@ -56,7 +56,7 @@ export class IconListComponent implements OnInit {
 //   "noteIdList": [card.id]
 // }
 
-console.log(id ,'   ',card.id)
+
       this.noteService.postcolor({
         "color": id,
         "noteIdList": [card.id]

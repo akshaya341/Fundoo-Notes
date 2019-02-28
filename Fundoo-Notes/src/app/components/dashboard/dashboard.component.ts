@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 import { EditLableComponent } from '../edit-lable/edit-lable.component';
 import { MatSnackBar } from '@angular/material'
 import { SearchService } from '../../service/searchService/search.service';
+import { ViewchangeService } from '../../service/viewchange.service';
 export interface DialogData {
   data: "akshaya"
 }
@@ -45,7 +46,7 @@ export class DashboardComponent implements OnInit {
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router,
-    public dialog: MatDialog, private data: SearchService, private snackBar: MatSnackBar, ) {
+    public dialog: MatDialog, private data: SearchService, private snackBar: MatSnackBar, private viewChange : ViewchangeService ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -121,6 +122,10 @@ export class DashboardComponent implements OnInit {
     })
 
   }
+
+  Change(){
+    this.viewChange.onViewchange();
+  }
   
 
   goSearch() {
@@ -133,15 +138,16 @@ export class DashboardComponent implements OnInit {
 
   grid(){
    this.isClicked = !this.isClicked;
+  
   }
 
   listView() {
     this.data.sendMessage(true);
-   // this.list = 1;
+  
   }
   gridView() {
     this.data.sendMessage(false);
-    //this.list = 0;
+    
   }
 
 }

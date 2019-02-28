@@ -14,6 +14,7 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
 const routes: Routes = [
   {
     path : '',
+    pathMatch:'full',
     component:  LoginComponent
   },{
     path : 'login',
@@ -32,6 +33,12 @@ const routes: Routes = [
     component: DashboardComponent,
     children:[   
       {
+        path:'',
+        redirectTo :'note',
+        pathMatch :'full'
+      },
+      {
+        
       path:'note',
       component : NoteComponent
     },

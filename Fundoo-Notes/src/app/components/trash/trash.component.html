@@ -1,14 +1,16 @@
-<!-- <div fxLayout="row" fxLayoutAlign="space-around start" fxFlex="100" >
-  <div fxFlex="20" fxFlex.xs="70" >
+
+<div fxLayout="row" fxLayoutAlign="space-around start" fxFlex="100" >
+  <div fxFlex="30" fxFlex.xs="70" >
       <p >Notes in Trash are deleted after 7 days.</p>
   </div>
  
  <div  class="empty" fxFlex.xs="30">
-  <a type="button" ><i (click)="emptyTrash()">Empty Trash</i></a>
+     <button mat-button>Empty Trash</button>
+  
  </div>
-</div> -->
 
- <div > 
+
+ <div fxLayout="column" fxLayoutAlign="space-evenly center" > 
         <div class="mininote" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex.xs="98" fxLayoutGap="10px" fxFlex="80">
             <div *ngFor="let items of trashcards ; let i = index">
                 <div>
@@ -17,17 +19,17 @@
                         <div>
                             <div fxLayout="row">
                                 <div (click)="openDialog(item)">{{items.title}}</div>
-                                <div fxLayout="row" fxLayoutAlign="end start"><button mat-icon-button>
-                                        <!-- <img src="../../../assets/image/pinbar.svg" > -->
+                                <!-- <div fxLayout="row" fxLayoutAlign="end start"><button mat-icon-button>
+                                        <mat-icon>menu</mat-icon>
                                     </button>
-                                </div>
+                                </div> -->
                             </div>
     
                             <div>{{items.description}}</div>
                             <div class="icons-div" fxLayout="row" fxLayoutAlign="start end" >
-                                <!-- <button >
+                                <button mat-icon-button>
                                         <mat-icon>more_vert</mat-icon>
-                                </button> -->
+                                </button>
                               
     
                                 
@@ -37,6 +39,6 @@
                 </div>
             </div>
         </div>
-    <!-- </div> -->
+    </div>
 
-
+</div>

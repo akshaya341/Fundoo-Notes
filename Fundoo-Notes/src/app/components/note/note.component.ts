@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output,ViewChild,AfterViewInit } from '@angul
 import { NoteServiceService } from "../../service/note-service.service";
 import { EventEmitter } from 'events';
 import { SearchService } from '../../service/searchService/search.service';
+import { ViewchangeService } from '../../service/viewchange.service';
 
 @Component({
   selector: 'app-note',
@@ -22,7 +23,8 @@ export class NoteComponent implements OnInit {
   private toggle: any = false;
   noteId: any = "";
   childColor: any = "";
-  constructor(private noteService:NoteServiceService,private data: SearchService) { }
+  private subscribeView : boolean;
+  constructor(private noteService:NoteServiceService,private data: SearchService, private viewChange:ViewchangeService) { }
   @Input() Search;
    @Input() card;
   @Output() child=new EventEmitter ();
@@ -33,6 +35,9 @@ export class NoteComponent implements OnInit {
     this.getAllCard();
     this.getTrashCard();
     this.switchView();
+    this.viewChange.subscribeView.subscribe(view =>{
+      this.subscribeView = view;
+    })
   }
 
   getAllCard(){
@@ -120,6 +125,8 @@ export class NoteComponent implements OnInit {
       this.getAllCard();
     }
   }
+
+  
   
 
 

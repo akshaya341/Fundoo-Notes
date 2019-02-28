@@ -31,7 +31,7 @@
         <mat-icon>refresh</mat-icon>
       </button>
 
-      <button mat-icon-button color="basic" id="grid" fxHide.xs matTooltip="grid" (click)="grid()"  (click)="listView()" >
+      <button mat-icon-button color="basic" id="grid" fxHide.xs matTooltip="grid" (click)="Change()" (click)="grid()"  (click)="listView()" >
         <!-- <mat-icon>border_all</mat-icon> -->
        
           <img *ngIf="isClicked==false" src="../../../assets/image/outline-view_agenda-24px.svg"/>
@@ -121,7 +121,7 @@
         <mat-list role="List">
 
 
-          <mat-list-item role="listitem" id="note" routerLinkActive="router-link-active" (click)="Note()">
+          <mat-list-item role="listitem" id="note" routerLinkActive="router-link-active" (click)="Note()" >
             <img id="img1" src="../../../assets/image/note.svg" />
             Note</mat-list-item>
 
@@ -154,8 +154,8 @@
       <router-outlet></router-outlet>
 
 
-       <app-maincard (messageEvent)="recieveMessage($event)" ></app-maincard>
-      <app-content></app-content> 
+       <!-- <app-maincard (messageEvent)="recieveMessage($event)" ></app-maincard> -->
+      <!-- <app-content></app-content>  -->
       <!-- <app-note></app-note> -->
       <!-- <app-trash></app-trash> -->
       <!-- <app-archieve></app-archieve>

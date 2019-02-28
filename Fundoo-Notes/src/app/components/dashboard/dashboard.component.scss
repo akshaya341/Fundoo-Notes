@@ -325,11 +325,35 @@ mat-sidenav{
     width: 517px;
 }
 
-// .mat-accordion .mat-expansion-panel:last-of-type {
-//    // background-color: yellowgreen;
-// }
+#note:hover
+{
+background-image:none;
+background-color: #E0E0E0;
+border-top-right-radius: 20%;
+border-bottom-right-radius: 20%;
+}
 
-// .mat-form-field-appearance-outline .mat-form-field-outline {
-//     width: 363px;
-//     flex: 1
-// }
+#rem:hover{
+    background-image:none;
+    background-color: #E0E0E0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+#lable:hover{
+    background-image:none;
+    background-color: #E0E0E0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+#arch:hover{
+    background-image:none;
+    background-color: #E0E0E0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+#bin:hover{
+    background-image:none;
+    background-color: #E0E0E0;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
